@@ -6,12 +6,14 @@
 .container {
     background-color: #fd9effa2;
     padding: 1.5rem;
+    border: 0.2rem solid black;
     border-radius: 0.5rem;
     display: flex;
     width: 32rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 3rem;
+
 }
 
 .Signup {
