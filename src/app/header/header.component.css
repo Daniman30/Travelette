@@ -7,6 +7,10 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
+  position:fixed;
+  left: 0;
+  right: 0;
+  border-bottom: 0.2rem solid black;
 }
 
 .header-main {
@@ -46,7 +50,7 @@
 
 .package-text {
   color: #112211;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Montserrat;
   font-weight: 600;
   word-wrap: break-word;
@@ -75,7 +79,7 @@
 
 .hotel-text {
   color: #112211;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Montserrat;
   font-weight: 600;
   word-wrap: break-word;
@@ -104,7 +108,7 @@
 
 .excursion-text {
   color: #112211;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Montserrat;
   font-weight: 600;
   word-wrap: break-word;
@@ -123,7 +127,7 @@
   top: 0px;
   position: absolute;
   text-align: left;
-  font-size:large;
+  font-size:20px;
 }
 
 .header-btns {
@@ -135,7 +139,7 @@
 
 .login-btn {
   color: #112211;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Montserrat;
   font-weight: 600;
   word-wrap: break-word;
