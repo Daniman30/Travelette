@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -9,6 +9,7 @@ import {HomeOfertaComponent} from './home-oferta/home-oferta.component'
 import {HomeExcursionComponent} from './home-excursion/home-excursion.component'
 import {HeaderComponent} from './header/header.component'
 import {FooterComponent} from './footer/footer.component'
+import { RegisterService } from './Services/register.service';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +27,14 @@ import {FooterComponent} from './footer/footer.component'
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  register = inject(RegisterService)
+  
+  ngOnInit(): void {
+    this.register.getRegister().subscribe((data) => (data));
+  }
   title = 'travelette';
+
 }
 
 
