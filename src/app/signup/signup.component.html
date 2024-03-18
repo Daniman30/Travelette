@@ -13,18 +13,26 @@
                 <h1 class="Texto-principal">Sign up</h1>
             </div>
 
-            <div class="bloque">
+            <form method="get" class="bloque">
                 <div class="form">
                     <div class="block">
-                        <input class="textbox" type="text">
+                        <input class="textbox" type="number" name="id">
+                        <p class="Text">ID</p>
+                    </div>
+                    <div class="block">
+                        <input class="textbox" type="text" name="userName">
                         <p class="Text">Name</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="text">
+                        <input class="textbox" type="text" name="nacionality">
+                        <p class="Text">Nacionalidad</p>
+                    </div>
+                    <div class="block">
+                        <input class="textbox" type="text" name="email">
                         <p class="Text">Email</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="password">
+                        <input class="textbox" type="password" name="password">
                         <p class="Text">Password</p>
                     </div>
                     <div class="block">
@@ -33,13 +41,13 @@
                     </div>
                 </div>
                 <div class="buttons-block">
-                    <button class="button">Create account</button>
+                    <button type="submit" class="button">Create account</button>
                     <div class="minifooter">
                         <p class="simple-text">Already have an account? </p>
                         <a routerLink="../login" class="link-text"> Login</a>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
