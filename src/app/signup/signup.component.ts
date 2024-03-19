@@ -47,7 +47,7 @@ export class SignupComponent {
     else
     {
       this.registerService.registerPost(post).subscribe({
-        next: (response) => { console.log(JSON.parse); }
+        next: (response) => { console.log(response); }
       })
     }
     

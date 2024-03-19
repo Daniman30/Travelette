@@ -2,9 +2,6 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { RegisterService } from './Services/register/register.service';
-import { HttpClient } from '@microsoft/signalr';
-import { RegisterService } from './Services/register.service';
-// import { HttpClient } from '@microsoft/signalr';
 import { provideHttpClient } from '@angular/common/http';
 
 
