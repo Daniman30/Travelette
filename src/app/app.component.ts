@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
+import {AdminAddhotelComponent} from  './admin-addhotel/admin-addhotel.component'
+import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,8 @@ import { FooterComponent } from './footer/footer.component'
     RouterModule,
     HeaderComponent,
     FooterComponent,
+    AdminAddhotelComponent,
+    AdminAddagencyComponent
   ]
 })
 export class AppComponent {
