@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
 import { RegisterService } from '../Services/register/register.service';
-import { every } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -13,13 +12,16 @@ import { every } from 'rxjs';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, 
+              private router: Router, 
+              private el: ElementRef, 
+              private renderer: Renderer2) { }
 
   registerPost() {
     event?.preventDefault();
     
     const password = document.getElementById('password') as HTMLInputElement
-    const passwordError = document.getElementById('passwordError') as HTMLParagraphElement;
+    const passwordError = this.el.nativeElement.querySelector('#passwordError');
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
 
     let post = {
@@ -31,24 +33,33 @@ export class SignupComponent {
 
     const regexNumber = /\d/;
     const regexLowercase = /[a-z]/;
-    if (!regexNumber.test(password.value)) {
-      password.value == '';
-      passwordError.textContent = 'Error: La contraseña debe contener al menos un número';
-      password.classList.add('error'); //! Agrega una clase para estilos de error????
-    }
-    else if (!regexLowercase.test(password.value)) {
-      password.value = '';
-      passwordError.textContent = 'Error: La contraseña debe contener al menos una letra minúscula';
-      password.classList.add('error'); //! Agrega una clase para estilos de error????
+    const regexUppercase = /[A-Z]/;
+    const regexSpecial = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+    if (password.value.length < 8) {
+      passwordError.textContent = 'The password must contain at least 8 characters';
     }
     else if (repeatPassword.value != password.value) {
-
+      passwordError.textContent = 'Password is different from Confirm Password';
+    }
+    else if (!regexNumber.test(password.value)) {
+      passwordError.textContent = 'The password must contain at least one number';
+    }
+    else if (!regexLowercase.test(password.value)) {
+      passwordError.textContent = 'The password must contain at least one lowercase letter';
+    }
+    else if(!regexUppercase.test(password.value)) {
+      passwordError.textContent = 'The password must contain at least one uppercase letter';
+    }
+    else if (!regexSpecial.test(password.value)) {
+      passwordError.textContent = 'The password must contain at least one special character';
     }
     else
     {
       this.registerService.registerPost(post).subscribe({
-        next: (response) => { console.log(response); }
+        next: (response) => { }
       })
+      this.router.navigate(['../home']);
     }
     
   }

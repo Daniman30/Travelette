@@ -6,6 +6,7 @@ import {AdminAddhotelComponent} from  './admin-addhotel/admin-addhotel.component
 import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
 import { HomeComponent } from './home/home.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
+import { HeaderInComponent } from './header-in/header-in.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
   imports: [
     RouterModule,
     HeaderComponent,
+    HeaderInComponent,
     FooterComponent,
     AdminAddhotelComponent,
     AdminAddagencyComponent,
