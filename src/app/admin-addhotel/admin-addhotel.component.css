@@ -1,0 +1,158 @@
+.main-frame {
+  width: 585px;
+  height: 666px;
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.buttons-box {
+  width: 204px;
+  height: 48px;
+  left: 362px;
+  top: 503px;
+  position: absolute;
+}
+
+.add-btn {
+  width: 116px;
+  height: 48px;
+  left: 88px;
+  top: 0px;
+  position: absolute;
+  background: #fd9effe0;
+  border-radius: 10px;
+  border: 0.5px #cbcbcb solid;
+  color: black;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.close-btn {
+  width: 74px;
+  height: 48px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: #858383;
+  border-radius: 10px;
+  border: 0.5px #cbcbcb solid;
+  color: white;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.title {
+  width: 259px;
+  height: 27px;
+  left: 19px;
+  top: 17px;
+  position: absolute;
+  color: black;
+  font-size: 28px;
+  font-family: Montserrat;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.top-line {
+  width: 585px;
+  height: 0px;
+  left: 0px;
+  top: 70px;
+  position: absolute;
+  border: 1px #cbcbcb solid;
+}
+
+.bottom-line {
+  width: 585px;
+  height: 0px;
+  left: 0px;
+  top: 491px;
+  position: absolute;
+  border: 1px #cbcbcb solid;
+}
+
+.image {
+  width: 115px;
+  height: 115px;
+  left: 40px;
+  top: 91px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.name-textbox {
+  width: 372px;
+  height: 48px;
+  left: 173px;
+  top: 139px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border: 0.5px #cbcbcb solid;
+}
+
+.name {
+  width: 91px;
+  left: 173px;
+  top: 111px;
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.category {
+  left: 40px;
+  top: 230px;
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+
+
+.address {
+  left: 40px;
+  top: 318px;
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.category-textbox {
+  width: 505px;
+  height: 48px;
+  left: 40px;
+  top: 258px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border: 0.5px #cbcbcb solid;
+}
+
+
+
+.address-textbox {
+  width: 505px;
+  height: 48px;
+  left: 40px;
+  top: 346px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border: 0.5px #cbcbcb solid;
+}

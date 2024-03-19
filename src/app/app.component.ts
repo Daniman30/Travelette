@@ -10,7 +10,8 @@ import {HomeExcursionComponent} from './home-excursion/home-excursion.component'
 import {HeaderComponent} from './header/header.component'
 import {FooterComponent} from './footer/footer.component'
 import { RegisterService } from './Services/register.service';
-
+import {AdminAddhotelComponent} from  './admin-addhotel/admin-addhotel.component'
+import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,7 +24,9 @@ import { RegisterService } from './Services/register.service';
             HomeOfertaComponent, 
             HomeExcursionComponent, 
             HeaderComponent, 
-            FooterComponent],
+            FooterComponent,
+            AdminAddhotelComponent,
+          AdminAddagencyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
