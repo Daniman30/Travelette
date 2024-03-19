@@ -17,17 +17,21 @@
             <div class="components-container">
                 <div class="forms-block">
                     <div class="block">
-                        <input class="textbox" type="text">
-                        <p class="Text">Email</p>
+                        <input class="textbox" type="text" id="userName" required>
+                        <p class="Text">Username</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="password">
+                        <input class="textbox" type="password" id="password" required>
                         <p class="Text">Password</p>
                     </div>
                     <div class="password-options">
-                        <input type="checkbox" name="" id="">
-                        <p class="simple-text">Remember password</p>
-                        <p class="link-text">Forgot password</p>
+                        <div class="remember">
+                            <input type="checkbox" name="" id="">
+                            <p class="simple-text" id="Remember">Remember password</p>
+                        </div>
+                        <div class="forgot">
+                            <p class="link-text">Forgot password</p>
+                        </div>
                     </div>
                 </div>
                 <div class="buttons-block">

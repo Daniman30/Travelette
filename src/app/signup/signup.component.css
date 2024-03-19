@@ -1,9 +1,9 @@
 .login {
     padding: 0.5rem;
-    margin-top: 5.5rem;
 }
 
 .container {
+    margin-top: 5.5rem;
     background-color: #fd9effa2;
     padding: 1.5rem;
     border: 0.2rem solid black;
@@ -12,7 +12,6 @@
     width: 32rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
 }
 
 .Signup {
@@ -52,16 +51,19 @@
 .block {
     display: flex;
     width: 32rem;
-    height: 3.5rem;
+    height: 2.5rem;
     flex-direction: column;
     align-items: flex-start;
-    border-radius: 0.25rem 0.25rem 0rem 0rem;
 }
 
 .textbox {
     display: flex;
     width: 90%;
     height: 3rem;
+    background-color: #FEC1FF;
+    border-color: #000;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
 }
 
 .Text {
@@ -69,6 +71,7 @@
     align-items: center;
     position: relative;
     top: -3.1rem;
+    left: 0.1rem;
 }
 
 .simple-text{
@@ -89,6 +92,7 @@
     font-weight: 500;
     line-height: normal;
     justify-content: flex-end;
+    padding-left: 0.3rem;
 }
 
 .buttons-block{
@@ -97,16 +101,20 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
+    align-items: center;
 }
 
 .button{
     display: flex;
-    width: 100%;
+    width: 60%;
     flex-direction: column;
     align-items: center;
     gap: 0.625rem;
-    border-radius: 0.5rem;
+    border-radius: 2.5rem;
     justify-content: center;
+    background-color: #ffffff;
+    border-color: #000;
+    border-width: 0.1rem;
 }
 
 .minifooter{
