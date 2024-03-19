@@ -74,6 +74,17 @@
     left: 0.1rem;
 }
 
+.error-text{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -4.15rem;
+    left: 31rem;
+    color: red;
+    font-weight: 600;
+    width: 150px;
+}
+
 .simple-text{
     color: var(--Blackish-Green, #121);
     /* Montserrat/Medium/14px */

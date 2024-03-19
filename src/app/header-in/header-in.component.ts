@@ -5,13 +5,12 @@ import { RouterOutlet } from '@angular/router';
 import {RouterModule} from '@angular/router'
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-in',
   standalone: true,
   imports: [RouterOutlet, LoginComponent, SignupComponent, RouterModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  templateUrl: './header-in.component.html',
+  styleUrl: './header-in.component.css'
 })
-export class HeaderComponent {
-  isRegister = false;
-  username = "";
+export class HeaderInComponent {
+
 }
