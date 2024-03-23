@@ -3,7 +3,9 @@ import { RouterModule } from '@angular/router'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
 import {AdminAddhotelComponent} from  './admin/admin-addhotel/admin-addhotel.component'
-import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency.component';
+import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency.component'
+import { HomeComponent } from './home/home.component';
+import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HeaderInComponent } from './header/header-in/header-in.component';
 
 @Component({
@@ -17,7 +19,9 @@ import { HeaderInComponent } from './header/header-in/header-in.component';
     HeaderInComponent,
     FooterComponent,
     AdminAddhotelComponent,
-    AdminAddagencyComponent
+    AdminAddagencyComponent,
+    HomeComponent,
+    HotelOffersComponent
   ]
 })
 export class AppComponent {
