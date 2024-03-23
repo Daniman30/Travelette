@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HomePaqueteComponent } from '../home-paquete/home-paquete.component';
-import { HomeOfertaComponent } from '../home-oferta/home-oferta.component';
-import { HomeExcursionComponent } from '../home-excursion/home-excursion.component';
+import { HomePaqueteComponent } from './home-paquete/home-paquete.component';
+import { HomeOfertaComponent } from './home-oferta/home-oferta.component';
+import { HomeExcursionComponent } from './home-excursion/home-excursion.component';
 
 @Component({
   selector: 'app-home',
