@@ -7,6 +7,8 @@ import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency
 import { HomeComponent } from './home/home.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HeaderInComponent } from './header/header-in/header-in.component';
+import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-booking.component';
+
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,9 @@ import { HeaderInComponent } from './header/header-in/header-in.component';
     AdminAddhotelComponent,
     AdminAddagencyComponent,
     HomeComponent,
-    HotelOffersComponent
+    HotelOffersComponent,
+    HotelOfferBookingComponent,
+
   ]
 })
 export class AppComponent {
