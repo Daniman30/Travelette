@@ -1,7 +1,8 @@
 .main-frame {
-  width: 90rem;
-  height: 279.1875rem;
-  background: #fafbfc;
+  width: 77rem;
+  margin-top: 5.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img-box {
@@ -80,8 +81,6 @@
   align-items: center;
   gap: 1rem;
   color: var(--Blackish-Green, #121);
-
-  /* TradeGothic/Bold/24px */
   font-family: "TradeGothic LT Extended";
   font-size: 3rem;
   font-style: normal;
@@ -109,14 +108,11 @@
 
 .location-text {
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Medium/14px */
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  opacity: 0.75;
 }
 
 .price_and_booking {
@@ -129,8 +125,6 @@
 .price_number {
   color: var(--Slamon, #ff8682);
   text-align: right;
-
-  /* Montserrat/Bold/32px */
   font-family: Montserrat;
   font-size: 2rem;
   font-style: normal;
@@ -140,8 +134,6 @@
 
 .night {
   color: var(--Slamon, #ff8682);
-
-  /* Montserrat/Bold/14px */
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
@@ -171,8 +163,6 @@
   border-radius: 0.25rem;
   background: var(--Mint-Green, #fd9effe0);
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Semibold/14px */
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
@@ -190,8 +180,8 @@
 .line1 {
   width: 77rem;
   height: 0.0625rem;
-  opacity: 0.25;
-  background: var(--Blackish-Green, #121);
+  background: var(--Blackish-Green, rgb(171, 163, 163));
+  border: rgb(255, 255, 255);
 }
 
 .overview_and_amenities {
@@ -210,8 +200,6 @@
 
 .overview-title {
   color: var(--Blackish-Green, #121);
-
-  /* TradeGothic/Bold/20px */
   font-family: "TradeGothic LT Extended";
   font-size: 1.25rem;
   font-style: normal;
@@ -222,14 +210,11 @@
 .overview-text {
   width: 77rem;
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Medium/16px */
   font-family: Montserrat;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  opacity: 0.75;
 }
 
 .amenities-box {
@@ -264,8 +249,6 @@
 
 .amenitie-text {
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Medium/16px */
   font-family: Montserrat;
   font-size: 1.5rem;
   font-style: normal;
@@ -282,8 +265,6 @@
 
 .availablerooms-title {
   color: var(--Blackish-Green, #121);
-
-  /* TradeGothic/Bold/20px */
   font-family: "TradeGothic LT Extended";
   font-size: 1.25rem;
   font-style: normal;
@@ -319,8 +300,6 @@
 
 .room-text {
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Medium/16px */
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -336,8 +315,6 @@
 
 .room-price {
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Semibold/24px */
   font-family: Montserrat;
   font-size: 1.5rem;
   font-style: normal;
@@ -347,8 +324,6 @@
 
 .room-night {
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Semibold/14px */
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
@@ -372,8 +347,6 @@
   border-radius: 0.25rem;
   background: var(--Mint-Green, #fd9effe0);
   color: var(--Blackish-Green, #121);
-
-  /* Montserrat/Semibold/14px */
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
@@ -384,6 +357,10 @@
 .line2 {
   width: 77rem;
   height: 0.03125rem;
-  opacity: 0.25;
-  background: var(--Blackish-Green, #121);
+  background: var(--Blackish-Green, rgb(171, 163, 163));
+  border: rgb(255, 255, 255);
+}
+
+hr{
+  opacity: 1;
 }

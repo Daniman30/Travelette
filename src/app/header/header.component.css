@@ -79,6 +79,7 @@
 }
 
 .hotel-text {
+    cursor: pointer;
     color: #112211;
     font-size: 16px;
     font-family: Montserrat;
@@ -122,6 +123,7 @@
 }
 
 .logo-img {
+    cursor: pointer;
     width: 110.36px;
     height: 36px;
     left: 0px;

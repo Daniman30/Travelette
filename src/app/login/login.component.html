@@ -17,11 +17,11 @@
             <div class="components-container">
                 <div class="forms-block">
                     <div class="block">
-                        <input class="textbox" type="text" id="userName" required>
+                        <input class="textbox" type="text" id="userName">
                         <p class="Text">Username</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="password" id="password" required>
+                        <input class="textbox" type="password" id="password">
                         <p class="Text">Password</p>
                     </div>
                     <div class="password-options">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="buttons-block">
-                    <button class="button">Login</button>
+                    <button class="button" (click)="loginPost()">Login</button>
                     <div class="minifooter">
                         <p class="simple-text">Don't have an account? </p>
                         <a routerLink="../signup" class="link-text"> Sign up</a>

@@ -1,8 +1,9 @@
 import { LoginService } from './../Services/login/login.service';
 import { Component } from '@angular/core';
 import { SignupComponent } from '../signup/signup.component';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import {RouterModule} from '@angular/router'
+import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ import {RouterModule} from '@angular/router'
 })
 
 export class LoginComponent {
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private router: Router,
+    private loginService: LoginService,
+    private idService: IdService) {}
 
   loginPost() {
     let post = {
@@ -22,8 +26,9 @@ export class LoginComponent {
     }
 
     this.loginService.loginPost(post).subscribe({
-      next: (response) => {console.log(response);}
+      next: (response) => {this.idService.changeId(response.toString());}
     })
+    this.router.navigate(['../home']);
   }
 }
 

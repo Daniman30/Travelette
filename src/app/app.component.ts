@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HeaderInComponent } from './header/header-in/header-in.component';
 import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-booking.component';
+import { CommonModule } from '@angular/common';
+import { IdService } from './Services/MovimientoDatos/IdService/id.service';
 
 
 @Component({
@@ -16,6 +18,7 @@ import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-bo
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [
+    CommonModule,
     RouterModule,
     HeaderComponent,
     HeaderInComponent,
@@ -25,7 +28,6 @@ import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-bo
     HomeComponent,
     HotelOffersComponent,
     HotelOfferBookingComponent,
-
   ]
 })
 export class AppComponent {
@@ -36,5 +38,18 @@ export class AppComponent {
     address: '',
     fax: '',
     electronicAddress: ''
+  }
+
+  isRegistered = false;
+  isNotRegistered = true;
+
+  constructor(private IdService: IdService) {
+    // this.idService.isRegisteredSource.suscribe(this.isRegistered => {
+    //   this.isRegistered = isRegistered;
+    // }) = true;
+    this.IdService.isRegistered.subscribe(isRegistered => {
+      this.isRegistered = isRegistered;
+    })
+    this.isNotRegistered = false;
   }
 }

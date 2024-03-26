@@ -27,7 +27,7 @@ export class SignupComponent {
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
 
     let post = {
-      id: "10",
+      id: "13",
       userName: (document.getElementById('userName') as HTMLInputElement).value,
       email: (document.getElementById('email') as HTMLInputElement).value,
       nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
@@ -62,9 +62,9 @@ export class SignupComponent {
       this.registerService.registerPost(post).subscribe({
         next: (response) => { 
           this.idService.changeId(response.toString());
-          this.router.navigate(['../home']);}
+          }
       })
-      
+      this.router.navigate(['../home']);
     }
     
   }
