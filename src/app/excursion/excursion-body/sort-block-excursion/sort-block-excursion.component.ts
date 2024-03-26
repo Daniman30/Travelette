@@ -1,9 +1,10 @@
+import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sort-block-excursion',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './sort-block-excursion.component.html',
   styleUrl: './sort-block-excursion.component.css'
 })

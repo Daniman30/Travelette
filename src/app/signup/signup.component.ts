@@ -3,6 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
 import { RegisterService } from '../Services/register/register.service';
+import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,8 @@ export class SignupComponent {
   constructor(private registerService: RegisterService, 
               private router: Router, 
               private el: ElementRef, 
-              private renderer: Renderer2) { }
+              private renderer: Renderer2,
+              private idService: IdService) { }
 
   registerPost() {
     event?.preventDefault();
@@ -25,6 +27,7 @@ export class SignupComponent {
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
 
     let post = {
+      id: "10",
       userName: (document.getElementById('userName') as HTMLInputElement).value,
       email: (document.getElementById('email') as HTMLInputElement).value,
       nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
@@ -57,9 +60,11 @@ export class SignupComponent {
     else
     {
       this.registerService.registerPost(post).subscribe({
-        next: (response) => { }
+        next: (response) => { 
+          this.idService.changeId(response.toString());
+          this.router.navigate(['../home']);}
       })
-      this.router.navigate(['../home']);
+      
     }
     
   }
