@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin-addhotel',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './admin-addhotel.component.html',
   styleUrl: './admin-addhotel.component.css'
 })

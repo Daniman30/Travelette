@@ -3,11 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { IApiCreateAgency, IApiListAgency } from '../Services/Models/listAgency.interface'; // Asegúrate de importar la interfaz
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { ListAgencyService } from '../Services/listAgency/list-agency.service';
+import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
+import { AdminAddhotelComponent } from './admin-addhotel/admin-addhotel.component';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [AdminComponent],
+  imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
