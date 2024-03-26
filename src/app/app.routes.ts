@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ExcursionComponent } from './excursion/excursion.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
-
+import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-booking.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +16,8 @@ export const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'admin', component: AdminComponent },
     { path: 'excursion', component: ExcursionComponent },
-    { path: 'hotel', component: HotelOffersComponent}
+    { path: 'hotel', component: HotelOffersComponent},
+    {path: 'hotelbooking', component: HotelOfferBookingComponent}
 ];
 
 @NgModule({
