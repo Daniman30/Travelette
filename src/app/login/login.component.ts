@@ -30,6 +30,24 @@ export class LoginComponent {
     })
     this.router.navigate(['../home']);
   }
+
+  dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'
+  seePath = '../../assets/eye-password-show-svgrepo-com.svg'
+  imgPath = this.seePath
+
+  showPassword: boolean = false
+  see() {
+
+    var passwordInput = document.getElementById("password") as HTMLInputElement;
+    if (passwordInput){
+      this.showPassword = !this.showPassword
+      if (passwordInput.type === "password") {
+        this.imgPath = this.dontSeePath
+      } else {
+        this.imgPath = this.seePath
+      }
+    }
+  }
 }
 
 

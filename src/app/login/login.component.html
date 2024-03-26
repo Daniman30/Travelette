@@ -21,8 +21,9 @@
                         <p class="Text">Username</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="password" id="password">
+                        <input class="textbox" type="{{showPassword ? 'text' : 'password'}}" id="password">
                         <p class="Text">Password</p>
+                        <img class="eye" (click)="see()" [src]=imgPath>
                     </div>
                     <div class="password-options">
                         <div class="remember">

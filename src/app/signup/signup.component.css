@@ -134,3 +134,19 @@
     justify-content: center;
     width: 100%;
 }
+
+.eye1{
+    width: 1rem;
+    display: flex;
+    position: relative;
+    left: 27rem;
+    top: -4.8rem;
+}
+
+.eye2{
+    width: 1rem;
+    display: flex;
+    position: relative;
+    left: 27rem;
+    top: -3.8rem;
+}

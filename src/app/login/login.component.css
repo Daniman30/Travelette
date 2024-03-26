@@ -24,7 +24,6 @@
 
 .Login-text {
     color: #000;
-    /* TradeGothic/Bold/40px */
     font-family: "TradeGothic LT Extended";
     font-size: 2.5rem;
     font-style: normal;
@@ -34,7 +33,6 @@
 
 .login-subtext {
     color: var(--Blackish-Green, #121);
-    /* Montserrat/Regular/16px */
     font-family: Montserrat;
     font-size: 1rem;
     font-style: normal;
@@ -97,11 +95,8 @@
 
 }
 
-
-
 .simple-text{
     color: var(--Blackish-Green, #121);
-    /* Montserrat/Medium/14px */
     font-family: Montserrat;
     font-size: 0.875rem;
     font-style: normal;
@@ -145,4 +140,12 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+}
+
+.eye{
+    width: 1rem;
+    display: flex;
+    position: relative;
+    left: 27rem;
+    top: -3.8rem;
 }

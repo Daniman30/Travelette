@@ -13,15 +13,15 @@ import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-  constructor(private registerService: RegisterService, 
-              private router: Router, 
-              private el: ElementRef, 
-              private renderer: Renderer2,
-              private idService: IdService) { }
+  constructor(private registerService: RegisterService,
+    private router: Router,
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private idService: IdService) { }
 
   registerPost() {
     event?.preventDefault();
-    
+
     const password = document.getElementById('password') as HTMLInputElement
     const passwordError = this.el.nativeElement.querySelector('#passwordError');
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
@@ -51,21 +51,37 @@ export class SignupComponent {
     else if (!regexLowercase.test(password.value)) {
       passwordError.textContent = 'The password must contain at least one lowercase letter';
     }
-    else if(!regexUppercase.test(password.value)) {
+    else if (!regexUppercase.test(password.value)) {
       passwordError.textContent = 'The password must contain at least one uppercase letter';
     }
     else if (!regexSpecial.test(password.value)) {
       passwordError.textContent = 'The password must contain at least one special character';
     }
-    else
-    {
+    else {
       this.registerService.registerPost(post).subscribe({
-        next: (response) => { 
+        next: (response) => {
           this.idService.changeId(response.toString());
-          }
+        }
       })
       this.router.navigate(['../home']);
     }
-    
+
+  }
+  dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'
+  seePath = '../../assets/eye-password-show-svgrepo-com.svg'
+  imgPath = this.seePath
+
+  showPassword: boolean = false
+  see() {
+
+    var passwordInput = document.getElementById("password") as HTMLInputElement;
+    if (passwordInput){
+      this.showPassword = !this.showPassword
+      if (passwordInput.type === "password") {
+        this.imgPath = this.dontSeePath
+      } else {
+        this.imgPath = this.seePath
+      }
+    }
   }
 }

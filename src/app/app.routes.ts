@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ExcursionComponent } from './excursion/excursion.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-booking.component';
+import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency.component';
+import { AdminAddhotelComponent } from './admin/admin-addhotel/admin-addhotel.component';
 
 
 export const routes: Routes = [
@@ -18,7 +20,9 @@ export const routes: Routes = [
     { path: 'admin', component: AdminComponent },
     { path: 'excursion', component: ExcursionComponent },
     { path: 'hotel', component: HotelOffersComponent},
-    { path: 'hotel/offers', component: HotelOfferBookingComponent}
+    { path: 'hotel/offers', component: HotelOfferBookingComponent},
+    { path: 'admin/add-agency', component: AdminAddagencyComponent},
+    { path: 'admin/add-hotel', component: AdminAddhotelComponent}
 ];
 
 @NgModule({
