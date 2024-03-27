@@ -14,6 +14,7 @@ import { HotelStaffComponent } from './hotel-staff/hotel-staff.component';
 import { AdminAdduserComponent } from './admin/admin-adduser/admin-adduser.component';
 import { MarketingComponent } from './marketing/marketing.component';
 
+import { PackageComponent } from './package/package.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,13 +23,15 @@ export const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'admin', component: AdminComponent },
     { path: 'excursion', component: ExcursionComponent },
-    { path: 'hotel', component: HotelOffersComponent},
-    { path: 'hotel/offers', component: HotelOfferBookingComponent},
-    { path: 'admin/add-agency', component: AdminAddagencyComponent},
-    { path: 'admin/add-hotel', component: AdminAddhotelComponent},
-    { path: 'admin/add-user', component: AdminAdduserComponent},
-    { path: 'staff', component: HotelStaffComponent},
-    { path: 'marketing', component: MarketingComponent},
+    { path: 'hotel', component: HotelOffersComponent },
+    { path: 'hotel/offers', component: HotelOfferBookingComponent },
+    { path: 'admin/add-agency', component: AdminAddagencyComponent },
+    { path: 'staff', component: HotelStaffComponent },
+    { path: 'admin/add-hotel', component: AdminAddhotelComponent },
+    { path: 'admin/add-user', component: AdminAdduserComponent },
+    { path: 'staff', component: HotelStaffComponent },
+    { path: 'marketing', component: MarketingComponent },
+    { path: 'package', component: PackageComponent }
 ];
 
 @NgModule({
