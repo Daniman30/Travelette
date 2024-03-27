@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './hotel-staff.component.css'
 })
 export class HotelStaffComponent {
-
+  NombreHotel = "Hotel 1"
 }

@@ -11,6 +11,8 @@ import { HotelOfferBookingComponent } from './hotel-offers/hotel-offer-booking/h
 import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency.component';
 import { AdminAddhotelComponent } from './admin/admin-addhotel/admin-addhotel.component';
 import { HotelStaffComponent } from './hotel-staff/hotel-staff.component';
+import { AdminAdduserComponent } from './admin/admin-adduser/admin-adduser.component';
+import { MarketingComponent } from './marketing/marketing.component';
 
 
 export const routes: Routes = [
@@ -24,7 +26,9 @@ export const routes: Routes = [
     { path: 'hotel/offers', component: HotelOfferBookingComponent},
     { path: 'admin/add-agency', component: AdminAddagencyComponent},
     { path: 'admin/add-hotel', component: AdminAddhotelComponent},
-    { path: 'staff', component: HotelStaffComponent}
+    { path: 'admin/add-user', component: AdminAdduserComponent},
+    { path: 'staff', component: HotelStaffComponent},
+    { path: 'marketing', component: MarketingComponent},
 ];
 
 @NgModule({

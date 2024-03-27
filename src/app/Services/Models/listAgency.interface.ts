@@ -24,3 +24,9 @@ export interface IApiLogin {
     userName: string,
     password: string
 }
+
+export interface IApiCreateHotel {
+    name: string;
+    category: string;
+    address: string;
+}

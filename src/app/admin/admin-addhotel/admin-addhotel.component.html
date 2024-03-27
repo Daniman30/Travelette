@@ -10,19 +10,19 @@
       <img class="image" src="../../assets/img/hotel.jpg" />
       <div class="Nombre">
         <div class="name">Nombre</div>
-        <input class="textbox" type="text" name="Nombre">
+        <input class="textbox" type="text" id="Nombre">
       </div>
     </div>
     <div class="bottom">
       <div class="category">Category</div>
-      <input class="textbox E" type="text" name="Categoría">
+      <input class="textbox E" type="text" id="Categoria">
       <div class="address">Dirección</div>
-      <input class="textbox E" type="text" name="Dirección">
+      <input class="textbox E" type="text" id="Direccion">
     </div>
   </div>
   <div class="bottom-line"></div>
   <div class="buttons-box">
-    <button class="button add-btn">Añadir Hotel</button>
+    <button class="button add-btn" (click)="createHotelPost()">Añadir Hotel</button>
     <button class="button close-btn">Cerrar</button>
   </div>
 </div>
