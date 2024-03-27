@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { LoginComponent } from '../../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
@@ -17,22 +17,19 @@ export class AdminAdduserComponent {
   constructor(private registerService: RegisterService,
     private router: Router,
     private el: ElementRef,
-    private renderer: Renderer2,
     private idService: IdService) { }
 
   registerPost() {
-    event?.preventDefault();
-
     const password = document.getElementById('password') as HTMLInputElement
     const passwordError = this.el.nativeElement.querySelector('#passwordError');
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
 
     let post = {
-      id: "15",
       userName: (document.getElementById('userName') as HTMLInputElement).value,
       email: (document.getElementById('email') as HTMLInputElement).value,
       nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
-      password: password.value
+      password: password.value,
+      role: (document.getElementById('userType') as HTMLInputElement).value
     }
 
     const regexNumber = /\d/;
@@ -60,11 +57,9 @@ export class AdminAdduserComponent {
     }
     else {
       this.registerService.registerPost(post).subscribe({
-        next: (response) => {
-          this.idService.changeId(response.toString());
-        }
+        next: (response) => { }
       })
-      this.router.navigate(['../home']);
+      this.router.navigate(['../admin']);
     }
 
   }

@@ -13,9 +13,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class AdminAddhotelComponent {
   constructor(private createHotelService: CreateHotelService,
-    private router: Router, 
-    private el: ElementRef,
-    private idService: IdService) {}
+    private router: Router) {}
   
   createHotelPost(){
     let post = {

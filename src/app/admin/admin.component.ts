@@ -1,49 +1,46 @@
-import { CreateAgencyService } from './../Services/createAgency/create-agency.service';
-import { HttpClient } from '@angular/common/http';
-import { IApiCreateAgency, IApiListAgency } from '../Services/Models/listAgency.interface'; // Asegúrate de importar la interfaz
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { DeleteHotelService } from './../Services/deleteHotel/delete-hotel.service';
+import { Component } from '@angular/core';
 import { ListAgencyService } from '../Services/listAgency/list-agency.service';
 import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
 import { AdminAddhotelComponent } from './admin-addhotel/admin-addhotel.component';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ListHotelService } from '../Services/listHotel/list-hotel.service';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule],
+  imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule, CommonModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
 
-export class AdminComponent implements OnInit {
+export class AdminComponent {
 
-  constructor(private createAgencyService: CreateAgencyService) {}
-
-  createPostWithAngular() {
-
-    let post = {
-      name: (document.getElementById('name') as HTMLInputElement).value,
-      address: (document.getElementById('address') as HTMLInputElement).value,
-      fax: (document.getElementById('fax') as HTMLInputElement).value,
-      electronicAddress: (document.getElementById('electronicAddress') as HTMLInputElement).value
-    }
-
-    this.createAgencyService.createPost(post).subscribe({
-      next: (response) => {console.log(response);}
-    })
-  }
+  // private readonly _listAgencyService = inject(ListAgencyService)
   
-  private readonly _listAgencyService = inject(ListAgencyService)
+  constructor(private listAgencyService: ListAgencyService,
+              private listHotelService: ListHotelService,
+              private deleteHotelService: DeleteHotelService) { }
   
-  products: IApiListAgency[] = []
+  products: any[] = []
+  data: any
+  public currentdata: any
 
-
-  ngOnInit(): void {
-      this._listAgencyService.listAgencies().subscribe((data) => (this.products = data))
+  listAgency(){
+      this.listAgencyService.listAgencies().subscribe((data) => (this.products = data))
+      this.currentdata = "agency"
   }
 
-  @Input({ required: true }) product?: IApiListAgency
-  
-  
+  listHotel(){
+    this.listHotelService.listHotels().subscribe((data) => (this.products = data))
+    this.currentdata = "hotel"
+  }
+
+  deleteHotel(id: number){
+    this.deleteHotelService.deleteHotel(id).subscribe(() => {this.listHotel()})
+  }
+
+  // @Input({ required: true }) product?: IApiListAgency
 }
 

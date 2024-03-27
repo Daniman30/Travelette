@@ -11,9 +11,7 @@ export class ListAgencyService {
 
   private readonly URL_PRODUCTS = 'http://localhost:5094/api/Agency/list'
 
-  constructor() {
-    console.log('listAgencyService')
-  }
+  constructor() { }
 
   listAgencies(){
     return this.httpClient.get<IApiListAgency[]>(this.URL_PRODUCTS)
