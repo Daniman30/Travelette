@@ -7,7 +7,7 @@ import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency
 import { HomeComponent } from './home/home.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HeaderInComponent } from './header/header-in/header-in.component';
-import { HotelOfferBookingComponent } from './hotel-offer-booking/hotel-offer-booking.component';
+import { HotelOfferBookingComponent } from './hotel-offers/hotel-offer-booking/hotel-offer-booking.component';
 import { CommonModule } from '@angular/common';
 import { IdService } from './Services/MovimientoDatos/IdService/id.service';
 
