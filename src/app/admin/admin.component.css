@@ -57,7 +57,44 @@ h1{
 
 .lists{
   height: 40px;
-  width: 80px;
+  width: 180px;
   border-radius: 0.5rem;
   background-color: #FEC1FF;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #FEC1FF;
+  color: #000;
+  border: 1px solid #000;
+}
+
+tr:nth-child(odd) {
+  background-color: #FEC1FF;
+  color: #000;
+}
+
+tr:nth-child(even) {
+  background-color: #fdeafd;
+}
+
+img{
+  width: 50px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.tabla{
+  align-self: center;
 }

@@ -11,8 +11,47 @@
         <button class="add-agency-btn adds" routerLink="./add-user/">Añadir User</button>
     </div>
     <div class="filter-bar">
-        <button class="filter-hotel-btn lists">Hoteles</button>
-        <button class="filter-agency-btn lists">Agencias</button>
-        <button class="filter-all-btn lists">Usuarios</button>
+        <button class="filter-hotel-btn lists" (click)="listHotel()">Listar Hoteles</button>
+        <button class="filter-agency-btn lists" (click)="listAgency()">Listar Agencias</button>
+        <button class="filter-all-btn lists">Listar Usuarios</button>
+    </div>
+    <div class="tabla" *ngIf="currentdata === 'agency'">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>ID</th>
+                <th>Direccion</th>
+                <th>Email</th>
+                <th>Fax</th>
+                <th>Borrar</th>
+            </tr>
+            <tr *ngFor="let item of products | slice:0:10">
+                <td>{{item.name}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.electronicAddress}}</td>
+                <td>{{item.fax}}</td>
+                <td><img src="../../assets/delete-icon.svg" alt="delete-icon"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="tabla" *ngIf="currentdata === 'hotel'">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>ID</th>
+                <th>Categoria</th>
+                <th>Direccion</th>
+                <th>Borrar</th>
+            </tr>
+            <tr *ngFor="let item of products | slice:0:10">
+                <td>{{item.name}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.address}}</td>
+                <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteHotel(item.id)"></td>
+            </tr>
+        </table>
     </div>
 </div>

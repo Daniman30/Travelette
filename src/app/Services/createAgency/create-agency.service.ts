@@ -11,7 +11,7 @@ export class CreateAgencyService {
 
   constructor(private http: HttpClient) { }
 
-  createPost(data: IApiCreateAgency){
+  createAgencyPost(data: IApiCreateAgency){
     return this.http.post(this.url, data)
   }
 }
