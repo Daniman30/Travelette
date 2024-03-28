@@ -38,4 +38,16 @@ export interface IApiListHotel {
     address: string
 }
 
+export interface IApiCreateHotelOffer {
+    hotelId: number
+    description: string
+    price: number
+}
+
+export interface IApiListHotelOffer {
+    description: string
+    price: number
+    hotelDto: number
+}
+
 

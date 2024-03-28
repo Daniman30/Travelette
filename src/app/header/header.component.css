@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'Barbie';
-    src: url('../../assets/fonts/Bartex\ \(1\).ttf') format('woff');  
-    
-  }
-  
+    src: url('../../assets/fonts/Bartex\ \(1\).ttf') format('woff');
+}
+
 .header-default {
     width: 100%;
     height: 60px;
     padding: 21px 104px;
     /*background: #fd9effa2; /*color traslucido*/
-    background: #FEC1FF;   /*color no traslucido*/
+    background: #FEC1FF;
+    /*color no traslucido*/
     justify-content: space-between;
     display: flex;
     position: fixed;
@@ -74,7 +74,7 @@
     font-size: 30px;
     font-weight: 500;
     font-family: 'Barbie';
-    
+
 }
 
 .header-btns {

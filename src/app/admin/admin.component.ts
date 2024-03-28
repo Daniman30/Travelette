@@ -17,8 +17,6 @@ import { ListHotelService } from '../Services/listHotel/list-hotel.service';
 
 export class AdminComponent {
 
-  // private readonly _listAgencyService = inject(ListAgencyService)
-  
   constructor(private listAgencyService: ListAgencyService,
               private listHotelService: ListHotelService,
               private deleteHotelService: DeleteHotelService) { }
@@ -28,8 +26,8 @@ export class AdminComponent {
   public currentdata: any
 
   listAgency(){
-      this.listAgencyService.listAgencies().subscribe((data) => (this.products = data))
-      this.currentdata = "agency"
+    this.listAgencyService.listAgencies().subscribe((data) => (this.products = data))
+    this.currentdata = "agency"
   }
 
   listHotel(){
@@ -40,7 +38,5 @@ export class AdminComponent {
   deleteHotel(id: number){
     this.deleteHotelService.deleteHotel(id).subscribe(() => {this.listHotel()})
   }
-
-  // @Input({ required: true }) product?: IApiListAgency
 }
 

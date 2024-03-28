@@ -7,7 +7,38 @@
     </div>
     <div class="divisor">
         <div class="list">
-
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Hotel id</th>
+                    <th>Borrar</th>
+                </tr>
+                <tr *ngFor="let item of products | slice:0:30">
+                    <td>{{item.lodgingOfferId}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.hotelDto}}</td>
+                    <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="DeleteHotelOffer(item.lodgingOfferId)"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                    <th>Direccion</th>
+                    <th>Borrar</th>
+                </tr>
+                <tr *ngFor="let item of products2 | slice:0:10">
+                    <td>{{item.name}}</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.address}}</td>
+                    <td><img src="../../assets/edit-svgrepo-com.svg" alt="edit-icon" (click)="createHotelOffers(item.id)"></td>
+                </tr>
+            </table>
         </div>
         <div class="form">
             <div class="container2">
@@ -17,27 +48,20 @@
                         <img class="image" src="../../assets/img/hotel.jpg" />
                         <div class="Nombre">
                             <div class="Nombre1">
-                                <div class="name">Nombre</div>
-                                <input class="textbox" type="text" name="Nombre">
+                                <div class="name">Primero rellena el formulario y despues selecciona el hotel al que quieres adicionar la oferta</div> 
                             </div>
                             <div class="Nombre2">
                                 <div class="name">Precio</div>
-                                <input class="textbox" type="number" name="Nombre">
+                                <input class="textbox" type="number" id="Precio">
                             </div>
                         </div>
                     </div>
                     <div class="bottom">
                         <div class="category">Descripcion</div>
-                        <input class="textbox E" type="text" name="Categoría">
+                        <input class="textbox E" type="text" id="Descripcion">
                     </div>
                 </div>
-                <div class="bottom-line"></div>
-                <div class="buttons-box">
-                    <button class="button add-btn">Añadir Hotel</button>
-                    <button class="button close-btn">Cerrar</button>
-                </div>
             </div>
-
         </div>
     </div>
 </div>
