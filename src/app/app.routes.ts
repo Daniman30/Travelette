@@ -13,8 +13,10 @@ import { AdminAddhotelComponent } from './admin/admin-addhotel/admin-addhotel.co
 import { HotelStaffComponent } from './hotel-staff/hotel-staff.component';
 import { AdminAdduserComponent } from './admin/admin-adduser/admin-adduser.component';
 import { MarketingComponent } from './marketing/marketing.component';
-
+import { ExcursionBookingComponent } from './excursion/excursion-booking/excursion-booking.component';
 import { PackageComponent } from './package/package.component';
+import { PackageBookingComponent } from './package/package-booking/package-booking.component';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,7 +33,10 @@ export const routes: Routes = [
     { path: 'admin/add-user', component: AdminAdduserComponent },
     { path: 'staff', component: HotelStaffComponent },
     { path: 'marketing', component: MarketingComponent },
-    { path: 'package', component: PackageComponent }
+    { path: 'package', component: PackageComponent },
+    { path: 'excursion/booking', component: ExcursionBookingComponent},
+    { path : 'package/booking', component: PackageBookingComponent}
+   
 ];
 
 @NgModule({
