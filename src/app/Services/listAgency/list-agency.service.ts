@@ -9,11 +9,11 @@ export class ListAgencyService {
 
   httpClient = inject(HttpClient)
 
-  private readonly URL_PRODUCTS = 'http://localhost:5094/api/Agency/list'
+  private readonly url = 'http://localhost:5094/api/Agency/list'
 
   constructor() { }
 
   listAgencies(){
-    return this.httpClient.get<IApiListAgency[]>(this.URL_PRODUCTS)
+    return this.httpClient.get<IApiListAgency[]>(this.url)
   }
 }

@@ -50,4 +50,15 @@ export interface IApiListHotelOffer {
     hotelDto: number
 }
 
+export interface IApiCreateFacility {
+    name: string
+}
+
+export interface IApiListFacility {
+    name: string
+}
+
+export interface countriesJSON {
+    name: string
+}
 

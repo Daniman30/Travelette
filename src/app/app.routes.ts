@@ -26,7 +26,7 @@ export const routes: Routes = [
     { path: 'admin', component: AdminComponent },
     { path: 'excursion', component: ExcursionComponent },
     { path: 'hotel', component: HotelOffersComponent },
-    { path: 'hotel/offers', component: HotelOfferBookingComponent },
+    { path: 'hotel/booking', component: HotelOfferBookingComponent },
     { path: 'admin/add-agency', component: AdminAddagencyComponent },
     { path: 'staff', component: HotelStaffComponent },
     { path: 'admin/add-hotel', component: AdminAddhotelComponent },
@@ -36,7 +36,7 @@ export const routes: Routes = [
     { path: 'package', component: PackageComponent },
     { path: 'excursion/booking', component: ExcursionBookingComponent},
     { path : 'package/booking', component: PackageBookingComponent}
-   
+
 ];
 
 @NgModule({

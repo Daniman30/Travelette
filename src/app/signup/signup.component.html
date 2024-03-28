@@ -20,7 +20,10 @@
                         <p class="Text">Username</p>
                     </div>
                     <div class="block">
-                        <input class="textbox" type="text" name="nacionality" id="nacionality">
+                        <!-- <input class="textbox" type="text" name="nacionality" id="nacionality"> -->
+                        <select class="textbox" name="nacionality" id="nacionality">
+                            <option *ngFor="let opcion of opciones">{{ opcion }}</option>
+                        </select>
                         <p class="Text">Nacionality</p>
                     </div>
                     <div class="block">

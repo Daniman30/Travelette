@@ -1,22 +1,25 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
 import { RegisterService } from '../Services/register/register.service';
 import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, SignupComponent, RouterModule],
+  imports: [RouterOutlet, LoginComponent, SignupComponent, RouterModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit{
+
   constructor(private registerService: RegisterService,
     private router: Router,
     private el: ElementRef,
-    private renderer: Renderer2,
+    private http: HttpClient,
     private idService: IdService) { }
 
   registerPost() {
@@ -75,7 +78,7 @@ export class SignupComponent {
   see() {
 
     var passwordInput = document.getElementById("password") as HTMLInputElement;
-    if (passwordInput){
+    if (passwordInput) {
       this.showPassword = !this.showPassword
       if (passwordInput.type === "password") {
         this.imgPath = this.dontSeePath
@@ -84,4 +87,24 @@ export class SignupComponent {
       }
     }
   }
+
+  opciones: string[] = []
+
+  func() {
+    this.http.get<string[]>('assets/countries.json').subscribe(
+    data => { this.opciones = data;},)
+    console.log(this.opciones);
+  }
+
+  ngOnInit(): void {
+    this.func()
+  }
+  // ngOnInit(): void {
+  //   this.http.get<string[]>('../Models/countries.json').subscribe(
+  //     data => {
+  //       this.opciones = data;
+  //       console.log(this.opciones);
+  //     }
+  //   );
+  // }
 }
