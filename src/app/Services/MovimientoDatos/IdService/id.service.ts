@@ -11,11 +11,13 @@ export class IdService {
   private idSource = new BehaviorSubject<string | null>(null);
   currentId = this.idSource.asObservable();
 
+  idUser = ""
+
   constructor() { }
 
-  changeId(id: string) {
+  changeId(username: string, id: string) {
     this.isRegisteredSource.next(true);
-    this.idSource.next(id);
-    
+    this.idSource.next(username);
+    this.idUser = id
   }
 }

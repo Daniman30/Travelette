@@ -6,6 +6,7 @@ import { RegisterService } from '../Services/register/register.service';
 import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../Services/Models/listAgency.interface';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,9 @@ export class SignupComponent implements OnInit{
     private http: HttpClient,
     private idService: IdService) { }
 
+    user = new User();
   registerPost() {
+
     event?.preventDefault();
 
     const password = document.getElementById('password') as HTMLInputElement
@@ -30,11 +33,11 @@ export class SignupComponent implements OnInit{
     const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
 
     let post = {
-      id: "15",
       userName: (document.getElementById('userName') as HTMLInputElement).value,
       email: (document.getElementById('email') as HTMLInputElement).value,
       nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
-      password: password.value
+      password: password.value,
+      role: "Tourist"
     }
 
     const regexNumber = /\d/;
@@ -63,13 +66,22 @@ export class SignupComponent implements OnInit{
     else {
       this.registerService.registerPost(post).subscribe({
         next: (response) => {
-          this.idService.changeId(response.toString());
+          this.idService.changeId(post.userName, response.toString());
+          if (localStorage.getItem('access_token')) {
+            this.router.navigate(['../home']);
+          } 
+          else {
+            // Manejar el error de autenticación
+          }
         }
       })
-      this.router.navigate(['../home']);
     }
 
   }
+
+
+
+
   dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'
   seePath = '../../assets/eye-password-show-svgrepo-com.svg'
   imgPath = this.seePath
@@ -92,19 +104,10 @@ export class SignupComponent implements OnInit{
 
   func() {
     this.http.get<string[]>('assets/countries.json').subscribe(
-    data => { this.opciones = data;},)
-    console.log(this.opciones);
+    data => { this.opciones = data })
   }
 
   ngOnInit(): void {
     this.func()
   }
-  // ngOnInit(): void {
-  //   this.http.get<string[]>('../Models/countries.json').subscribe(
-  //     data => {
-  //       this.opciones = data;
-  //       console.log(this.opciones);
-  //     }
-  //   );
-  // }
 }

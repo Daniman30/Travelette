@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { IApiListAgency } from '../Models/listAgency.interface';
 
@@ -14,6 +14,8 @@ export class ListAgencyService {
   constructor() { }
 
   listAgencies(){
-    return this.httpClient.get<IApiListAgency[]>(this.url)
+    const token = localStorage.getItem('access_token'); // Obtiene el token de acceso del localStorage
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.httpClient.get<IApiListAgency[]>(this.url, { headers })
   }
 }

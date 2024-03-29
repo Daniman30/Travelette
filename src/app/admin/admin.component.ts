@@ -6,6 +6,8 @@ import { AdminAddhotelComponent } from './admin-addhotel/admin-addhotel.componen
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ListHotelService } from '../Services/listHotel/list-hotel.service';
+import { AuthService } from '../Services/auth/auth.service';
+import { LoginService } from '../Services/login/login.service';
 
 @Component({
   selector: 'app-admin',
@@ -19,14 +21,16 @@ export class AdminComponent {
 
   constructor(private listAgencyService: ListAgencyService,
               private listHotelService: ListHotelService,
-              private deleteHotelService: DeleteHotelService) { }
+              private deleteHotelService: DeleteHotelService
+              ) { }
   
   products: any[] = []
-  data: any
+  products2: any[] = []
+  
   public currentdata: any
 
   listAgency(){
-    this.listAgencyService.listAgencies().subscribe((data) => (this.products = data))
+    this.listAgencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
     this.currentdata = "agency"
   }
 

@@ -26,9 +26,10 @@ export class LoginComponent {
     }
 
     this.loginService.loginPost(post).subscribe({
-      next: (response) => {this.idService.changeId(response.toString());}
+      next: (response) => {this.idService.changeId(post.userName, response.toString())
+        this.router.navigate(['../home']);
+      }
     })
-    this.router.navigate(['../home']);
   }
 
   dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'

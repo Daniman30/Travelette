@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Barbie';
+    src: url('../../../assets/fonts/Bartex\ \(1\).ttf') format('woff');
+}
+
 .header-default {
     width: 100%;
     height: 60px;
@@ -9,6 +14,7 @@
     position: fixed;
     left: 0;
     right: 0;
+    top: 0px;
     border-bottom: 0.2rem solid black;
 }
 
@@ -60,12 +66,14 @@
     justify-content: center;
     left: 0;
     right: 0;
+    bottom: 1px;
 }
 
 .logo-img {
     cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Barbie';
 }
 
 .header-btns {

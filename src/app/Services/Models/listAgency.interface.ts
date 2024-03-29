@@ -1,8 +1,17 @@
+export class User {
+    userName = ''
+    email = ''
+    nacionality = ''
+    password = ''
+    role = ''
+}
+
 export interface IApiRegister {
     userName: string
     email: string
     nacionality: string
     password: string
+    role: string
 }
 
 export interface IApiLogin {

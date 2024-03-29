@@ -44,9 +44,6 @@ export class AppComponent {
   isNotRegistered = true;
 
   constructor(private IdService: IdService) {
-    // this.idService.isRegisteredSource.suscribe(this.isRegistered => {
-    //   this.isRegistered = isRegistered;
-    // }) = true;
     this.IdService.isRegistered.subscribe(isRegistered => {
       this.isRegistered = isRegistered;
     })
