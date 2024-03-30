@@ -24,7 +24,6 @@
 
 .Login-text {
     color: #000;
-    
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -33,7 +32,6 @@
 
 .login-subtext {
     color: var(--Blackish-Green, #121);
-    
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -47,7 +45,7 @@
     align-self: stretch;
 }
 
-.block{
+.block {
     display: flex;
     width: 32rem;
     height: 3.5rem;
@@ -56,7 +54,7 @@
     border-radius: 0.25rem 0.25rem 0rem 0rem;
 }
 
-.textbox{
+.textbox {
     display: flex;
     width: 90%;
     height: 3rem;
@@ -66,7 +64,7 @@
     border-radius: 0.5rem;
 }
 
-.Text{
+.Text {
     display: flex;
     align-items: center;
     position: relative;
@@ -81,32 +79,26 @@
     gap: 13rem;
 }
 
-.remember{
+.remember {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
 }
 
-#Remember{
+#Remember {
     padding-top: 0.9rem;
 }
 
-.forgot{
-
-}
-
-.simple-text{
+.simple-text {
     color: var(--Blackish-Green, #121);
-    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.link-text{
+.link-text {
     color: var(--Slamon, #FF8682);
-    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -115,7 +107,7 @@
     padding-left: 0.3rem;
 }
 
-.buttons-block{
+.buttons-block {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -124,7 +116,7 @@
     align-items: center;
 }
 
-.button{
+.button {
     display: flex;
     width: 60%;
     flex-direction: column;
@@ -135,14 +127,14 @@
     background-color: #fff;
 }
 
-.minifooter{
+.minifooter {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
 }
 
-.eye{
+.eye {
     width: 1rem;
     display: flex;
     position: relative;

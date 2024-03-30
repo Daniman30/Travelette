@@ -3,17 +3,17 @@ import { Injectable, inject } from '@angular/core';
 import { IApiListHotel } from '../Models/listAgency.interface';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ListHotelService {
 
-  httpClient = inject(HttpClient)
+    httpClient = inject(HttpClient)
 
-  private readonly url = 'http://localhost:5094/api/Hotel/list'
+    private readonly url = 'http://localhost:5094/api/Hotel/list'
 
-  constructor() { }
+    constructor() { }
 
-  listHotels(){
-    return this.httpClient.get<IApiListHotel[]>(this.url)
-  }
+    listHotels() {
+        return this.httpClient.get<IApiListHotel[]>(this.url)
+    }
 }

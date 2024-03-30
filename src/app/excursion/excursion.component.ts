@@ -7,11 +7,11 @@ import { SortBlockExcursionComponent } from './excursion-body/sort-block-excursi
 import { ExcursionBodyOffersComponent } from './excursion-body/excursion-body-offers/excursion-body-offers.component';
 
 @Component({
-  selector: 'app-excursion',
-  standalone: true,
-  imports: [ExcursionBodyComponent, ExcursionFiltersComponent, ExcursionSearchComponent, RouterModule, SortBlockExcursionComponent, ExcursionBodyOffersComponent],
-  templateUrl: './excursion.component.html',
-  styleUrl: './excursion.component.css'
+    selector: 'app-excursion',
+    standalone: true,
+    imports: [ExcursionBodyComponent, ExcursionFiltersComponent, ExcursionSearchComponent, RouterModule, SortBlockExcursionComponent, ExcursionBodyOffersComponent],
+    templateUrl: './excursion.component.html',
+    styleUrl: './excursion.component.css'
 })
 export class ExcursionComponent {
 

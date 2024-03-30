@@ -1,4 +1,4 @@
-.HomePaqueteMain{
+.HomePaqueteMain {
     margin-top: 5.5rem;
 }
 
@@ -9,7 +9,7 @@
     gap: 24px;
 }
 
-.superblock{
+.superblock {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -36,8 +36,6 @@
     height: 36px;
     align-self: stretch;
     color: #000;
-    /* Montserrat/Semibold/32px */
-    
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -47,9 +45,6 @@
 .h2Nor {
     align-self: stretch;
     color: var(--Blackish-Green, #121);
-
-    /* Montserrat/Regular/16px */
-    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -60,9 +55,7 @@
     width: 519px;
     height: 559px;
     flex-shrink: 0;
-
-    /* Cards Shadow */
-    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
+    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);    /* Cards Shadow */
 }
 
 img {
@@ -112,9 +105,6 @@ img {
     width: 389px;
     color: var(--Neutrals, #FFF);
     text-align: center;
-
-    /* TradeGothic/Bold/40px */
-    
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -125,9 +115,6 @@ img {
     width: 389px;
     color: var(--Neutrals, #FFF);
     text-align: center;
-
-    /* Montserrat/Regular/16px */
-    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -144,9 +131,6 @@ img {
     border-radius: 4px;
     border: 1px solid black;
     background-color: #FEC1FF;
-
-    /* Montserrat/Medium/14px */
-    
     font-size: 14px;
     font-style: normal;
     font-weight: 500;

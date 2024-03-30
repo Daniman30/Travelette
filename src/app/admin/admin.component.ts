@@ -10,37 +10,37 @@ import { AuthService } from '../Services/auth/auth.service';
 import { LoginService } from '../Services/login/login.service';
 
 @Component({
-  selector: 'app-admin',
-  standalone: true,
-  imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule, CommonModule],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+    selector: 'app-admin',
+    standalone: true,
+    imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule, CommonModule],
+    templateUrl: './admin.component.html',
+    styleUrl: './admin.component.css'
 })
 
 export class AdminComponent {
 
-  constructor(private listAgencyService: ListAgencyService,
-              private listHotelService: ListHotelService,
-              private deleteHotelService: DeleteHotelService
-              ) { }
-  
-  products: any[] = []
-  products2: any[] = []
-  
-  public currentdata: any
+    constructor(private listAgencyService: ListAgencyService,
+        private listHotelService: ListHotelService,
+        private deleteHotelService: DeleteHotelService
+    ) { }
 
-  listAgency(){
-    this.listAgencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
-    this.currentdata = "agency"
-  }
+    products: any[] = []
+    products2: any[] = []
 
-  listHotel(){
-    this.listHotelService.listHotels().subscribe((data) => (this.products = data))
-    this.currentdata = "hotel"
-  }
+    public currentdata: any
 
-  deleteHotel(id: number){
-    this.deleteHotelService.deleteHotel(id).subscribe(() => {this.listHotel()})
-  }
+    listAgency() {
+        this.listAgencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
+        this.currentdata = "agency"
+    }
+
+    listHotel() {
+        this.listHotelService.listHotels().subscribe((data) => (this.products = data))
+        this.currentdata = "hotel"
+    }
+
+    deleteHotel(id: number) {
+        this.deleteHotelService.deleteHotel(id).subscribe(() => { this.listHotel() })
+    }
 }
 

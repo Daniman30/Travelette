@@ -15,7 +15,6 @@
 }
 
 .title {
-    
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
@@ -26,7 +25,6 @@
 }
 
 .text {
-    
     font-size: 14px;
     font-weight: 400;
 }
@@ -50,7 +48,6 @@
     margin-top: 1rem;
 }
 
-.other{
-    
+.other {
     font-weight: 500;
 }

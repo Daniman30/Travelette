@@ -36,19 +36,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-
-    /* display: flex;
-    height: 32px;
-    padding: 8px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    align-self: stretch; */
-
     color: var(--Blackish-Green, #121);
-
-    /* Montserrat/Medium/12px */
-    
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -65,9 +53,6 @@
 .price {
     color: var(--Slamon, #FF8682);
     text-align: right;
-
-    /* Montserrat/Bold/24px */
-    
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -110,7 +95,7 @@
     flex: 1 0 0;
 }
 
-button{
+button {
     display: flex;
     height: 50px;
     padding: 8px 16px;

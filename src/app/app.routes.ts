@@ -34,8 +34,8 @@ export const routes: Routes = [
     { path: 'staff', component: HotelStaffComponent },
     { path: 'marketing', component: MarketingComponent },
     { path: 'package', component: PackageComponent },
-    { path: 'excursion/booking', component: ExcursionBookingComponent},
-    { path : 'package/booking', component: PackageBookingComponent}
+    { path: 'excursion/booking', component: ExcursionBookingComponent },
+    { path: 'package/booking', component: PackageBookingComponent }
 
 ];
 

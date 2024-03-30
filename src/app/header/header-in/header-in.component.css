@@ -2,8 +2,8 @@
     width: 100%;
     height: 60px;
     padding: 21px 104px;
-    /*background: #fd9effa2; /*color traslucido*/
-    background: #FEC1FF;   /*color no traslucido*/
+    /*background: #fd9effa2;*/  /*color traslucido*/
+    background: #FEC1FF;      /*color no traslucido*/
     justify-content: space-between;
     display: flex;
     position: fixed;
@@ -46,7 +46,7 @@
     cursor: pointer;
     color: #112211;
     font-size: 16px;
-    
+
     font-weight: 600;
     word-wrap: break-word;
 }
@@ -79,7 +79,6 @@
 .login-btn {
     color: #000000;
     font-size: 18px;
-    
     font-weight: 600;
     word-wrap: break-word;
     text-decoration: none;
@@ -104,7 +103,6 @@
 .signup-text {
     color: white;
     font-size: 14px;
-    
     font-weight: 600;
     word-wrap: break-word;
     text-decoration: none;

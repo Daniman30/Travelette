@@ -5,13 +5,12 @@
     gap: 24px;
 }
 
-.divide{
+.divide {
     gap: 0rem;
     height: 0px;
 }
 
 p {
-    
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -36,9 +35,6 @@ p {
     align-self: stretch;
     border-radius: 4px;
     background-color: #FEC1FF;
-
-    /* Montserrat/Semibold/14px */
-    
     font-size: 14px;
     font-style: normal;
     font-weight: 600;

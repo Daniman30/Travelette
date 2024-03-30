@@ -24,8 +24,6 @@
 
 .Texto-principal {
     color: #000;
-    /* TradeGothic/Bold/40px */
-    
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -74,7 +72,7 @@
     left: 0.1rem;
 }
 
-.error-text{
+.error-text {
     display: flex;
     align-items: center;
     position: relative;
@@ -85,19 +83,16 @@
     width: 150px;
 }
 
-.simple-text{
+.simple-text {
     color: var(--Blackish-Green, #121);
-    /* Montserrat/Medium/14px */
-    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.link-text{
+.link-text {
     color: var(--Slamon, #FF8682);
-    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -106,7 +101,7 @@
     padding-left: 0.3rem;
 }
 
-.buttons-block{
+.buttons-block {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -115,7 +110,7 @@
     align-items: center;
 }
 
-.button{
+.button {
     display: flex;
     width: 60%;
     flex-direction: column;
@@ -128,14 +123,14 @@
     border-width: 0.1rem;
 }
 
-.minifooter{
+.minifooter {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
 }
 
-.eye1{
+.eye1 {
     width: 1rem;
     display: flex;
     position: relative;
@@ -143,7 +138,7 @@
     top: -4.8rem;
 }
 
-.eye2{
+.eye2 {
     width: 1rem;
     display: flex;
     position: relative;

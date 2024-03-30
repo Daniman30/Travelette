@@ -7,11 +7,11 @@ import { PackageBodyOffersComponent } from './package-body/package-body-offers/p
 import { SortBlockPackageComponent } from './package-body/sort-block-package/sort-block-package.component';
 
 @Component({
-  selector: 'app-package',
-  standalone: true,
-  imports: [RouterModule, PackageBodyComponent,PackageFiltersComponent, PackageSearchComponent, PackageBodyOffersComponent, SortBlockPackageComponent],
-  templateUrl: './package.component.html',
-  styleUrl: './package.component.css'
+    selector: 'app-package',
+    standalone: true,
+    imports: [RouterModule, PackageBodyComponent, PackageFiltersComponent, PackageSearchComponent, PackageBodyOffersComponent, SortBlockPackageComponent],
+    templateUrl: './package.component.html',
+    styleUrl: './package.component.css'
 })
 export class PackageComponent {
 

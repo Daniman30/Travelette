@@ -36,3 +36,9 @@
     flex-shrink: 0;
     background: #e2e7e2;
 }
+
+h1 {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}

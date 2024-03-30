@@ -3,17 +3,17 @@ import { Injectable, inject } from '@angular/core';
 import { IApiListFacility } from '../Models/listAgency.interface';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ListFacilityService {
 
-  httpClient = inject(HttpClient)
+    httpClient = inject(HttpClient)
 
-  private url = 'http://localhost:5094/api/Facility/list'
+    private url = 'http://localhost:5094/api/Facility/list'
 
-  constructor() { }
+    constructor() { }
 
-  listFacility() {
-    return this.httpClient.get<IApiListFacility[]>(this.url)
-  }
+    listFacility() {
+        return this.httpClient.get<IApiListFacility[]>(this.url)
+    }
 }

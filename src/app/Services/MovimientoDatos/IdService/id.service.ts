@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class IdService {
-  isRegisteredSource = new BehaviorSubject<boolean>(false);
-  isRegistered = this.isRegisteredSource.asObservable();
+    isRegisteredSource = new BehaviorSubject<boolean>(false);
+    isRegistered = this.isRegisteredSource.asObservable();
 
-  private idSource = new BehaviorSubject<string | null>(null);
-  currentId = this.idSource.asObservable();
+    private idSource = new BehaviorSubject<string | null>(null);
+    currentId = this.idSource.asObservable();
 
-  idUser = ""
+    idUser = ""
 
-  constructor() { }
+    constructor() { }
 
-  changeId(username: string, id: string) {
-    this.isRegisteredSource.next(true);
-    this.idSource.next(username);
-    this.idUser = id
-  }
+    changeId(username: string, id: string) {
+        this.isRegisteredSource.next(true);
+        this.idSource.next(username);
+        this.idUser = id
+    }
 }

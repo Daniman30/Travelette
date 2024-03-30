@@ -4,11 +4,11 @@ import { ExcursionBodyOffersComponent } from './excursion-body-offers/excursion-
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-excursion-body',
-  standalone: true,
-  imports: [SortBlockExcursionComponent, ExcursionBodyOffersComponent, RouterModule],
-  templateUrl: './excursion-body.component.html',
-  styleUrl: './excursion-body.component.css'
+    selector: 'app-excursion-body',
+    standalone: true,
+    imports: [SortBlockExcursionComponent, ExcursionBodyOffersComponent, RouterModule],
+    templateUrl: './excursion-body.component.html',
+    styleUrl: './excursion-body.component.css'
 })
 export class ExcursionBodyComponent {
 
