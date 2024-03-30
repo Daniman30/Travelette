@@ -24,7 +24,7 @@
 
 .Login-text {
     color: #000;
-    font-family: "TradeGothic LT Extended";
+    
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -33,7 +33,7 @@
 
 .login-subtext {
     color: var(--Blackish-Green, #121);
-    font-family: Montserrat;
+    
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -97,7 +97,7 @@
 
 .simple-text{
     color: var(--Blackish-Green, #121);
-    font-family: Montserrat;
+    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -106,7 +106,7 @@
 
 .link-text{
     color: var(--Slamon, #FF8682);
-    font-family: Montserrat;
+    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;

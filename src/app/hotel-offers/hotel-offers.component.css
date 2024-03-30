@@ -28,7 +28,7 @@
   flex: 1 0 0;
   color: var(--Blackish-Green, #121);
   /* Montserrat/Semibold/16px */
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -52,7 +52,7 @@
   flex: 1 0 0;
   color: var(--Blackish-Green, #121);
   /* Montserrat/Semibold/16px */
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -76,7 +76,7 @@
   flex: 1 0 0;
   color: var(--Blackish-Green, #121);
   /* Montserrat/Semibold/16px */
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -129,7 +129,7 @@
 
 .rectangle1-title {
   color: var(--Blackish-Green, #121);
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
@@ -156,7 +156,7 @@
   text-align: right;
 
   /* Montserrat/Bold/24px */
-  font-family: Montserrat;
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;

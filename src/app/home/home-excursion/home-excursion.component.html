@@ -7,143 +7,19 @@
         <button class="button" routerLink="../excursion">See more excursions</button>
     </div>
     <div class="Body">
-        <div class="block">
+        <div class="block" *ngFor="let item of products">
             <div class="Rectangle">
                 <div class="blockImg">
                     <img src="../../../assets/img/cayo-santa-maria.jpg" alt="agecia1">
                 </div>
                 <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Cayo Santa María, Villa Clara</p>
+                    <p class="agencyName" id="AgNa1">{{item.name}}</p>
                     <div class="details">
                         <p class="detail">Tropical </p>
                         <p class="detail separator">•</p>
                         <p class="detail">Island </p>
                         <p class="detail separator">•</p>
                         <p class="detail">Paradise</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/habana.jfif" alt="agecia2">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">La Habana Vieja</p>
-                    <div class="details">
-                        <p class="detail">Historic </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">City </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Charm</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/varadero.jfif" alt="agecia3">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Varadero, Matanzas</p>
-                    <div class="details">
-                        <p class="detail">Beachfront </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Luxury</p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Resorts</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block">
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/trinidad.jfif" alt="agecia4">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Trinidad, Sancti Spíritus</p>
-                    <div class="details">
-                        <p class="detail">Colonial </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Architecture </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Great</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/vinales.jfif" alt="agecia5">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Valle de Viñales, Pinar del Río</p>
-                    <div class="details">
-                        <p class="detail">Scenic </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Nature </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Escape</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/juventud.jfif" alt="agecia6">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Isla de la Juventud</p>
-                    <div class="details">
-                        <p class="detail">Adventurous </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Island </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Nice</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block">
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/zapata.jpg" alt="agecia7">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Ciénaga de Zapata, Matanzas</p>
-                    <div class="details">
-                        <p class="detail">Wildlife </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Enthusiast’s </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Dream</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/saturno.jpg" alt="agecia8">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">Cuevas de Saturno, Matanzas</p>
-                    <div class="details">
-                        <p class="detail">Underground </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Natural </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Wonder</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Rectangle">
-                <div class="blockImg">
-                    <img src="../../../assets/img/el-nicho.jpg" alt="agecia9">
-                </div>
-                <div class="blockText">
-                    <p class="agencyName" id="AgNa1">El Nicho, Cienfuegos</p>
-                    <div class="details">
-                        <p class="detail">Mountain </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Waterfall </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Oasis</p>
                     </div>
                 </div>
             </div>

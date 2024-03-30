@@ -23,7 +23,7 @@
   .date {
     color: var(--Blackish-Green, #121);
     /* TradeGothic/Bold/20px */
-    font-family: "TradeGothic LT Extended";
+    
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
@@ -33,7 +33,7 @@
   .duration {
     color: var(--Blackish-Green, #121);
     /* Montserrat/Medium/20px */
-    font-family: Montserrat;
+    
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
@@ -82,7 +82,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Semibold/24px */
-    font-family: Montserrat;
+    
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
@@ -93,7 +93,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Medium/14px */
-    font-family: Montserrat;
+    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -141,7 +141,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Semibold/24px */
-    font-family: Montserrat;
+    
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
@@ -152,7 +152,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Medium/16px */
-    font-family: Montserrat;
+    
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -193,7 +193,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Semibold/24px */
-    font-family: Montserrat;
+    
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
@@ -207,7 +207,7 @@
     color: var(--Blackish-Green, #121);
   
     /* Montserrat/Medium/16px */
-    font-family: Montserrat;
+    
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;

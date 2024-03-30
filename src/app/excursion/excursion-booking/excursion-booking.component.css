@@ -35,7 +35,7 @@
   color: var(--Blackish-Green, #121);
 
   /* TradeGothic/Bold/24px */
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -65,7 +65,7 @@
   color: var(--Blackish-Green, #121);
 
   /* Montserrat/Medium/14px */
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;
@@ -78,7 +78,7 @@
   text-align: right;
 
   /* Montserrat/Bold/32px */
-  font-family: Montserrat;
+  
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
@@ -109,7 +109,7 @@
   color: var(--Blackish-Green, #121);
 
   /* Montserrat/Semibold/14px */
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
@@ -149,7 +149,7 @@
   color: var(--Blackish-Green, #121);
 
   /* TradeGothic/Bold/24px */
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -186,7 +186,7 @@
 .warning-title {
   color: var(--Blackish-Green, #121);
   /* TradeGothic/Bold/24px */
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -224,7 +224,7 @@
   flex: 1 0 0;
   color: var(--Blackish-Green, #121);
   /* Montserrat/Medium/16px */
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;

@@ -81,7 +81,7 @@
   align-items: center;
   gap: 1rem;
   color: var(--Blackish-Green, #121);
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 3rem;
   font-style: normal;
   font-weight: 700;
@@ -108,7 +108,7 @@
 
 .location-text {
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
@@ -125,7 +125,7 @@
 .price_number {
   color: var(--Slamon, #ff8682);
   text-align: right;
-  font-family: Montserrat;
+  
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
@@ -134,7 +134,7 @@
 
 .night {
   color: var(--Slamon, #ff8682);
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -163,7 +163,7 @@
   border-radius: 0.25rem;
   background: var(--Mint-Green, #fd9effe0);
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
@@ -200,7 +200,7 @@
 
 .overview-title {
   color: var(--Blackish-Green, #121);
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
@@ -210,7 +210,7 @@
 .overview-text {
   width: 77rem;
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
@@ -249,7 +249,7 @@
 
 .amenitie-text {
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
@@ -265,7 +265,7 @@
 
 .availablerooms-title {
   color: var(--Blackish-Green, #121);
-  font-family: "TradeGothic LT Extended";
+  
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
@@ -300,7 +300,7 @@
 
 .room-text {
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
@@ -315,7 +315,7 @@
 
 .room-price {
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -324,7 +324,7 @@
 
 .room-night {
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
@@ -347,7 +347,7 @@
   border-radius: 0.25rem;
   background: var(--Mint-Green, #fd9effe0);
   color: var(--Blackish-Green, #121);
-  font-family: Montserrat;
+  
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;

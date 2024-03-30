@@ -27,7 +27,7 @@ h1 {
     align-self: stretch;
     color: #000;
     /* Montserrat/Semibold/32px */
-    font-family: Montserrat;
+    
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -37,9 +37,6 @@ h1 {
 h3 {
     width: 551px;
     color: #000;
-
-    /* Montserrat/Regular/16px */
-    font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -56,9 +53,6 @@ h3 {
     border-radius: 4px;
     border: 1px solid black;
     background-color: #FEC1FF;
-
-    /* Montserrat/Medium/14px */
-    font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -75,33 +69,27 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-img {
+    background-image: url("../../../assets/img/HotelPiscina.png");
+    background-size: cover;
     width: 255px;
     height: 420px;
-    border-radius: 12px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    position: relative;
-    bottom: 154px;
+    margin-top: 230px;
 }
 
 .textInfo {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    gap: 2px;
 }
 
 .texts {
     display: flex;
-    width: 177px;
+    width: 230px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -109,9 +97,7 @@ img {
 h2 {
     align-self: stretch;
     color: var(--Neutrals, #FFF);
-
-    font-family: Montserrat;
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -122,7 +108,7 @@ h4 {
     color: var(--Neutrals, #FFF);
 
     /* Montserrat/Regular/14px */
-    font-family: Montserrat;
+    
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -142,7 +128,7 @@ h4 {
     background-color: #FEC1FF;
 
     /* Montserrat/Medium/14px */
-    font-family: Montserrat;
+    
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -154,7 +140,7 @@ h4 {
     background-color: #FEC1FF;
 
     /* Montserrat/Medium/14px */
-    font-family: Montserrat;
+    
     font-size: 14px;
     font-style: normal;
     font-weight: 500;

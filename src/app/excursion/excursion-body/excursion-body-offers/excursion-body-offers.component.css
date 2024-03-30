@@ -48,7 +48,7 @@
     color: var(--Blackish-Green, #121);
 
     /* Montserrat/Medium/12px */
-    font-family: Montserrat;
+    
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -67,7 +67,7 @@
     text-align: right;
 
     /* Montserrat/Bold/24px */
-    font-family: Montserrat;
+    
     font-size: 24px;
     font-style: normal;
     font-weight: 700;

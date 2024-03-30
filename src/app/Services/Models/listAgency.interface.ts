@@ -24,7 +24,7 @@ export interface IApiCreateAgency {
     address: string
     fax: string
     electronicAddress: string
-}    
+}
 
 export interface IApiListAgency {
     id: number
@@ -32,7 +32,7 @@ export interface IApiListAgency {
     address: string
     fax: string
     electronicAddress: string
-}    
+}
 
 export interface IApiCreateHotel {
     name: string
@@ -71,3 +71,14 @@ export interface countriesJSON {
     name: string
 }
 
+export interface IApiCreateExcursion {
+    id: number
+    name: string
+    capacity: number
+    price: number
+    arrivalDate: Date
+    departureDate: Date
+    arrivalPlace: string
+    departurePlace: string
+    guia: string
+}

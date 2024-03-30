@@ -1,3 +1,7 @@
+.HomePaqueteMain{
+    margin-top: 5.5rem;
+}
+
 .HomePaquete {
     display: flex;
     width: 1062;
@@ -33,7 +37,7 @@
     align-self: stretch;
     color: #000;
     /* Montserrat/Semibold/32px */
-    font-family: Montserrat;
+    
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -45,7 +49,7 @@
     color: var(--Blackish-Green, #121);
 
     /* Montserrat/Regular/16px */
-    font-family: Montserrat;
+    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -110,7 +114,7 @@ img {
     text-align: center;
 
     /* TradeGothic/Bold/40px */
-    font-family: "TradeGothic LT Extended";
+    
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -123,7 +127,7 @@ img {
     text-align: center;
 
     /* Montserrat/Regular/16px */
-    font-family: Montserrat;
+    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -142,7 +146,7 @@ img {
     background-color: #FEC1FF;
 
     /* Montserrat/Medium/14px */
-    font-family: Montserrat;
+    
     font-size: 14px;
     font-style: normal;
     font-weight: 500;

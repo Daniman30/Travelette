@@ -13,7 +13,7 @@
     align-self: stretch;
 
     color: #000;
-    font-family: "TradeGothic LT Extended";
+    
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -129,7 +129,7 @@ h1 {
 }
 
 .E {
-    width: 240%;
+    width: 95%;
     height: 1.55rem;
 }
 
@@ -195,4 +195,26 @@ img {
 
 .tabla {
     align-self: center;
+}
+
+.Doubles{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    width: 480px;
+}
+
+.minitextbox{
+    display: flex;
+    width: 93%;
+    height: 1.7rem;
+    background-color: #FEC1FF;
+    border-color: #000;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+
+}
+
+.miniNombre{
+    width: 238px;
 }

@@ -25,7 +25,7 @@
 .Texto-principal {
     color: #000;
     /* TradeGothic/Bold/40px */
-    font-family: "TradeGothic LT Extended";
+    
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -88,7 +88,7 @@
 .simple-text{
     color: var(--Blackish-Green, #121);
     /* Montserrat/Medium/14px */
-    font-family: Montserrat;
+    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -97,7 +97,7 @@
 
 .link-text{
     color: var(--Slamon, #FF8682);
-    font-family: Montserrat;
+    
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
