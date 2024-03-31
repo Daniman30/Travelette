@@ -1,7 +1,7 @@
-import { FacilityService } from './../Services/facility/facility.service';
+import { FacilityService } from '../Services/facility.service';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ExcursionService } from '../Services/excursion/excursion.service';
+import { ExcursionService } from '../Services/excursion.service';
 
 @Component({
     selector: 'app-marketing',

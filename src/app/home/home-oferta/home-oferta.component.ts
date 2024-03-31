@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { HotelService } from '../../Services/listHotel/list-hotel.service';
+import { RouterModule } from '@angular/router';
+import { HotelService } from '../../Services/hotel.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ExcursionService } from '../../Services/excursion/excursion.service';
+import { ExcursionService } from '../../Services/excursion.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

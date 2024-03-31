@@ -1,9 +1,9 @@
-import { HotelService } from './../Services/hotel/hotel.service';
+import { HotelService } from '../Services/hotel.service';
 import { Component, ElementRef } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RegisterService } from '../Services/register/register.service';
-import { AgencyService } from '../Services/agency/agency.service';
+import { RegisterService } from '../Services/register.service';
+import { AgencyService } from '../Services/agency.service';
 
 @Component({
     selector: 'app-admin',
@@ -18,7 +18,6 @@ export class AdminComponent {
     constructor(private agencyService: AgencyService,
         private hotelService: HotelService,
         private registerService: RegisterService,
-        private router: Router,
         private el: ElementRef,
     ) { }
 
@@ -26,6 +25,10 @@ export class AdminComponent {
     products2: any[] = []
 
     public currentdata: any
+
+    showNothing() {
+        this.currentdata = ''
+    }
 
     addAgency() {
         this.currentdata = 'addAgency'
@@ -58,7 +61,7 @@ export class AdminComponent {
     }
 
     deleteAgency(id: number) {
-
+        this.agencyService.deleteAgency(id).subscribe(() => { this.listAgency() })
     }
 
     deleteUser(id: number) {
@@ -74,11 +77,8 @@ export class AdminComponent {
         }
 
         this.agencyService.createAgencyPost(post).subscribe({
-            next: (response) => {
-
-            }
+            next: (response) => { this.listAgency() }
         })
-        this.router.navigate(['../admin'])
     }
 
     createHotelPost() {
@@ -89,11 +89,9 @@ export class AdminComponent {
         }
 
         this.hotelService.createHotelPost(post).subscribe({
-            next: (response) => {
-
-            }
+            next: (response) => { this.listHotel() }
         })
-        this.router.navigate(['../admin'])
+        
     }
 
     registerPost() {
@@ -136,19 +134,17 @@ export class AdminComponent {
         }
         else {
             this.registerService.registerPost(post).subscribe({
-                next: (response) => { this.router.navigate(['../admin']); }
+                next: (response) => { this.listUser() }
             })
-            
         }
-
     }
+
     dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'
     seePath = '../../assets/eye-password-show-svgrepo-com.svg'
     imgPath = this.seePath
 
     showPassword: boolean = false
     see() {
-
         var passwordInput = document.getElementById("password") as HTMLInputElement;
         if (passwordInput) {
             this.showPassword = !this.showPassword
@@ -158,6 +154,10 @@ export class AdminComponent {
                 this.imgPath = this.seePath
             }
         }
+    }
+
+    updateAgency(id: number) {
+        
     }
 }
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IApiCreateFacility, IApiListFacility } from '../Models/listAgency.interface';
+import { IApiCreateFacility, IApiListFacility } from './Models/listAgency.interface';
 
 @Injectable({
     providedIn: 'root'

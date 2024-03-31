@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from '../../login/login.component';
-import { SignupComponent } from '../../signup/signup.component';
+import { SignupComponent } from '../../register/signup.component';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
 import { IdService } from '../../Services/MovimientoDatos/id.service';

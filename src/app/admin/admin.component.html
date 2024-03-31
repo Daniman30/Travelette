@@ -23,6 +23,7 @@
                 <th>Direccion</th>
                 <th>Email</th>
                 <th>Fax</th>
+                <th>Update</th>
                 <th>Borrar</th>
             </tr>
             <tr *ngFor="let item of products2 | slice:0:10">
@@ -31,7 +32,8 @@
                 <td>{{item.address}}</td>
                 <td>{{item.electronicAddress}}</td>
                 <td>{{item.fax}}</td>
-                <td><img src="../../assets/delete-icon.svg" alt="delete-icon"></td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateAgency(item.id)"></td>
+                <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteAgency(item.id)"></td>
             </tr>
         </table>
     </div>
@@ -97,7 +99,7 @@
             <div class="bottom-line"></div>
             <div class="buttons-boxA">
                 <button class="buttonA add-btnA" (click)="createAgencyPost()">Añadir Agencia</button>
-                <button class="buttonA close-btnA">Cerrar</button>
+                <button class="buttonA close-btnA" (click)="showNothing()">Cerrar</button>
             </div>
         </div>
     </div>
@@ -124,7 +126,7 @@
             <div class="bottom-line"></div>
             <div class="buttons-boxH">
                 <button class="buttonH add-btnH" (click)="createHotelPost()">Añadir Hotel</button>
-                <button class="buttonH close-btnH">Cerrar</button>
+                <button class="buttonH close-btnH" (click)="showNothing()">Cerrar</button>
             </div>
         </div>
     </div>
@@ -171,7 +173,7 @@
                     <div class="Ubuttons-block">
                         <div class="Ubuttons">
                             <button class="Ubutton" type="button" (click)="registerPost()">Create account</button>
-                            <button class="buttonH close-btnH" type="button">Cerrar</button>
+                            <button class="buttonH close-btnH" type="button" (click)="showNothing()">Cerrar</button>
                         </div>
                         <div class="Uminifooter">
                             <p class="Usimple-text">Already have an account? </p>

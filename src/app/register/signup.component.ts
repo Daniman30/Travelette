@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
-import { RegisterService } from '../Services/register/register.service';
+import { RegisterService } from '../Services/register.service';
 import { IdService } from '../Services/MovimientoDatos/id.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';

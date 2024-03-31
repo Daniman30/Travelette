@@ -1,8 +1,8 @@
-import { HotelOffersService } from './../Services/hotelOffers/hotel-offers.service';
+import { HotelOffersService } from '../Services/hotel-offers.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { HotelService } from '../Services/hotel/hotel.service';
+import { HotelService } from '../Services/hotel.service';
 
 @Component({
     selector: 'app-hotel-staff',
