@@ -1,27 +1,25 @@
-import { DeleteHotelService } from './../Services/deleteHotel/delete-hotel.service';
-import { Component } from '@angular/core';
-import { ListAgencyService } from '../Services/listAgency/list-agency.service';
-import { AdminAddagencyComponent } from './admin-addagency/admin-addagency.component';
-import { AdminAddhotelComponent } from './admin-addhotel/admin-addhotel.component';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { HotelService } from './../Services/hotel/hotel.service';
+import { Component, ElementRef } from '@angular/core';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ListHotelService } from '../Services/listHotel/list-hotel.service';
-import { AuthService } from '../Services/auth/auth.service';
-import { LoginService } from '../Services/login/login.service';
+import { RegisterService } from '../Services/register/register.service';
+import { AgencyService } from '../Services/agency/agency.service';
 
 @Component({
     selector: 'app-admin',
     standalone: true,
-    imports: [AdminComponent, RouterOutlet, AdminAddagencyComponent, AdminAddhotelComponent, RouterModule, CommonModule],
+    imports: [AdminComponent, RouterOutlet, RouterModule, CommonModule],
     templateUrl: './admin.component.html',
     styleUrl: './admin.component.css'
 })
 
 export class AdminComponent {
 
-    constructor(private listAgencyService: ListAgencyService,
-        private listHotelService: ListHotelService,
-        private deleteHotelService: DeleteHotelService
+    constructor(private agencyService: AgencyService,
+        private hotelService: HotelService,
+        private registerService: RegisterService,
+        private router: Router,
+        private el: ElementRef,
     ) { }
 
     products: any[] = []
@@ -29,18 +27,137 @@ export class AdminComponent {
 
     public currentdata: any
 
+    addAgency() {
+        this.currentdata = 'addAgency'
+    }
+
+    addHotel() {
+        this.currentdata = 'addHotel'
+    }
+
+    addUser() {
+        this.currentdata = 'addUser'
+    }
+
     listAgency() {
-        this.listAgencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
+        this.agencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
         this.currentdata = "agency"
     }
 
     listHotel() {
-        this.listHotelService.listHotels().subscribe((data) => (this.products = data))
+        this.hotelService.listHotels().subscribe((data) => (this.products = data))
         this.currentdata = "hotel"
     }
 
+    listUser() {
+
+    }
+
     deleteHotel(id: number) {
-        this.deleteHotelService.deleteHotel(id).subscribe(() => { this.listHotel() })
+        this.hotelService.deleteHotel(id).subscribe(() => { this.listHotel() })
+    }
+
+    deleteAgency(id: number) {
+
+    }
+
+    deleteUser(id: number) {
+
+    }
+
+    createAgencyPost() {
+        let post = {
+            name: (document.getElementById('Nombre') as HTMLInputElement).value,
+            address: (document.getElementById('Direccion') as HTMLInputElement).value,
+            fax: (document.getElementById('Fax') as HTMLInputElement).value,
+            electronicAddress: (document.getElementById('Email') as HTMLInputElement).value,
+        }
+
+        this.agencyService.createAgencyPost(post).subscribe({
+            next: (response) => {
+
+            }
+        })
+        this.router.navigate(['../admin'])
+    }
+
+    createHotelPost() {
+        let post = {
+            name: (document.getElementById('Nombre') as HTMLInputElement).value,
+            category: (document.getElementById('Categoria') as HTMLInputElement).value,
+            address: (document.getElementById('Direccion') as HTMLInputElement).value
+        }
+
+        this.hotelService.createHotelPost(post).subscribe({
+            next: (response) => {
+
+            }
+        })
+        this.router.navigate(['../admin'])
+    }
+
+    registerPost() {
+        this.currentdata = 'addUser'
+
+        const password = document.getElementById('password') as HTMLInputElement
+        const passwordError = this.el.nativeElement.querySelector('#passwordError');
+        const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
+
+        let post = {
+            userName: (document.getElementById('userName') as HTMLInputElement).value,
+            email: (document.getElementById('email') as HTMLInputElement).value,
+            nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
+            password: password.value,
+            role: (document.getElementById('userType') as HTMLInputElement).value
+        }
+
+        const regexNumber = /\d/;
+        const regexLowercase = /[a-z]/;
+        const regexUppercase = /[A-Z]/;
+        const regexSpecial = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+        if (password.value.length < 8) {
+            passwordError.textContent = 'The password must contain at least 8 characters';
+        }
+        else if (repeatPassword.value != password.value) {
+            passwordError.textContent = 'Password is different from Confirm Password';
+        }
+        else if (!regexNumber.test(password.value)) {
+            passwordError.textContent = 'The password must contain at least one number';
+        }
+        else if (!regexLowercase.test(password.value)) {
+            passwordError.textContent = 'The password must contain at least one lowercase letter';
+        }
+        else if (!regexUppercase.test(password.value)) {
+            passwordError.textContent = 'The password must contain at least one uppercase letter';
+        }
+        else if (!regexSpecial.test(password.value)) {
+            passwordError.textContent = 'The password must contain at least one special character';
+        }
+        else {
+            this.registerService.registerPost(post).subscribe({
+                next: (response) => { this.router.navigate(['../admin']); }
+            })
+            
+        }
+
+    }
+    dontSeePath = '../../assets/eye-password-hide-svgrepo-com.svg'
+    seePath = '../../assets/eye-password-show-svgrepo-com.svg'
+    imgPath = this.seePath
+
+    showPassword: boolean = false
+    see() {
+
+        var passwordInput = document.getElementById("password") as HTMLInputElement;
+        if (passwordInput) {
+            this.showPassword = !this.showPassword
+            if (passwordInput.type === "password") {
+                this.imgPath = this.dontSeePath
+            } else {
+                this.imgPath = this.seePath
+            }
+        }
     }
 }
 

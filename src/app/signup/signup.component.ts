@@ -3,7 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
 import { RegisterService } from '../Services/register/register.service';
-import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
+import { IdService } from '../Services/MovimientoDatos/id.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Services/Models/listAgency.interface';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { ListHotelService } from '../../Services/listHotel/list-hotel.service';
+import { HotelService } from '../../Services/listHotel/list-hotel.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,12 +12,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeOfertaComponent implements OnInit {
 
-    constructor(private listHotelService: ListHotelService) { }
+    constructor(private hotelService: HotelService) { }
 
     products: any[] = []
 
     ngOnInit(): void {
-        this.listHotelService.listHotels().subscribe((data) => (this.products = data))
+        this.hotelService.listHotels().subscribe((data) => (this.products = data))
     }
 
 

@@ -1,11 +1,8 @@
-import { DeleteHotelOffersService } from './../Services/deleteHotelOffers/delete-hotel-offers.service';
-import { CreateHotelOffersService } from './../Services/createHotelOffers/create-hotel-offers.service';
-import { ListHotelOffersService } from './../Services/listHotelOffers/list-hotel-offers.service';
+import { HotelOffersService } from './../Services/hotelOffers/hotel-offers.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { ListHotelService } from '../Services/listHotel/list-hotel.service';
-import { DeleteHotelService } from '../Services/deleteHotel/delete-hotel.service';
+import { HotelService } from '../Services/hotel/hotel.service';
 
 @Component({
     selector: 'app-hotel-staff',
@@ -16,11 +13,8 @@ import { DeleteHotelService } from '../Services/deleteHotel/delete-hotel.service
 })
 export class HotelStaffComponent implements OnInit {
 
-    constructor(private listHotelOffersService: ListHotelOffersService,
-        private createHotelOffersService: CreateHotelOffersService,
-        private listHotelService: ListHotelService,
-        private deleteHotelService: DeleteHotelService,
-        private deleteHotelOffersService: DeleteHotelOffersService,
+    constructor(private hotelOffersService: HotelOffersService,
+        private hotelService: HotelService,
         private router: Router) { }
     NombreHotel = "Selecciona un Hotel"
 
@@ -33,7 +27,7 @@ export class HotelStaffComponent implements OnInit {
     }
 
     listHotelOffers() {
-        this.listHotelOffersService.listHotelOffers().subscribe((data) => (this.products = data))
+        this.hotelOffersService.listHotelOffers().subscribe((data) => (this.products = data))
     }
 
     createHotelOffers(idHotel: number) {
@@ -42,16 +36,16 @@ export class HotelStaffComponent implements OnInit {
             description: (document.getElementById('Descripcion') as HTMLInputElement).value,
             price: parseInt((document.getElementById('Precio') as HTMLInputElement).value)
         }
-        this.createHotelOffersService.createHotelOfferPost(post).subscribe({
+        this.hotelOffersService.createHotelOfferPost(post).subscribe({
             next: (response) => { this.listHotelOffers() }
         })
     }
 
     listHotel() {
-        this.listHotelService.listHotels().subscribe((data) => (this.products2 = data))
+        this.hotelService.listHotels().subscribe((data) => (this.products2 = data))
     }
 
     DeleteHotelOffer(id: number) {
-        this.deleteHotelOffersService.deleteHotelOffer(id).subscribe(() => { this.listHotel() })
+        this.hotelOffersService.deleteHotelOffer(id).subscribe(() => { this.listHotel() })
     }
 }

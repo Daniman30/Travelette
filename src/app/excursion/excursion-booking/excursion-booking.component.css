@@ -1,17 +1,21 @@
-.main {
-    width: 90rem;
-    height: 151.125rem;
-    background: #fafbfc;
+.container {
     margin-top: 5.5rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
 }
 
 .titlebar {
     display: flex;
-    width: 77rem;
+    width: 50rem;
     justify-content: space-between;
     align-items: flex-start;
+    justify-self: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .titledetails {
@@ -64,7 +68,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    opacity: 0.75;
 }
 
 .price {
@@ -104,21 +107,26 @@
     line-height: normal;
 }
 
-.main-img {
-    width: 77rem;
+.mainimg {
+    width: 50rem;
     height: 24.6875rem;
     flex-shrink: 0;
     border-radius: 0.75rem;
     margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .description-box {
     display: flex;
-    width: 77rem;
+    width: 50rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
     margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
 
 .description-imgs {
@@ -210,5 +218,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    opacity: 0.75;
+}
+
+.booking {
+    width: 800px;
 }

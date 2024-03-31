@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SignupComponent } from '../signup/signup.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
-import { IdService } from '../Services/MovimientoDatos/IdService/id.service';
+import { IdService } from '../Services/MovimientoDatos/id.service';
 
 @Component({
     selector: 'app-login',

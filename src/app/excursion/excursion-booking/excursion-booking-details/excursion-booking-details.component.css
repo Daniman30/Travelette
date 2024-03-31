@@ -4,20 +4,22 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-    align-self: stretch;
     border-radius: 0.75rem;
-    background: var(--Neutrals, #fff);
-    align-items: center;
-
-    /* Cards Shadow */
-    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
+    background: var(--Neutrals, #fec1ff);
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
 }
 
 .main-header {
     display: flex;
-    align-items: flex-start;
-    gap: 56.25rem;
-    align-self: stretch;
+    flex-direction: row;
+    margin-right: 0;
+    gap: 40rem;
+}
+
+p{
+    margin-bottom: 0;
 }
 
 .date {
@@ -37,11 +39,11 @@
 }
 
 .content {
+    padding-right: 2rem;
     display: flex;
-    width: 75rem;
+    width: 800px;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
 }
 
 .agency-facilities {
@@ -88,7 +90,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    opacity: 0.6;
 }
 
 .facilities {
@@ -141,13 +142,11 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    opacity: 0.6;
 }
 
 .center-icons {
     display: flex;
-    transform: rotate(-90deg);
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 1.5rem;
 }
@@ -155,13 +154,11 @@
 .horizontal-lines {
     width: 2.25rem;
     height: 2rem;
-    transform: rotate(-90deg);
 }
 
 .main-icon {
     width: 3rem;
     height: 3rem;
-    transform: rotate(90deg);
 }
 
 .arrival {
@@ -190,5 +187,4 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    opacity: 0.6;
 }

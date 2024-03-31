@@ -13,6 +13,8 @@
                     <th>Descripcion</th>
                     <th>Precio</th>
                     <th>Hotel id</th>
+                    <th>Añadir</th>
+                    <th>Editar</th>
                     <th>Borrar</th>
                 </tr>
                 <tr *ngFor="let item of products | slice:0:30">
@@ -20,6 +22,9 @@
                     <td>{{item.description}}</td>
                     <td>{{item.price}}</td>
                     <td>{{item.hotelDto}}</td>
+                    <td><img src="../../assets/plus-svgrepo-com.svg" alt="edit-icon"
+                        ></td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt=""></td>
                     <td><img src="../../assets/delete-icon.svg" alt="delete-icon"
                             (click)="DeleteHotelOffer(item.lodgingOfferId)"></td>
                 </tr>
@@ -27,18 +32,16 @@
             <table>
                 <tr>
                     <th>Nombre</th>
-                    <th>ID</th>
                     <th>Categoria</th>
                     <th>Direccion</th>
-                    <th>Borrar</th>
+                    <th>Añadir</th>
                 </tr>
                 <tr *ngFor="let item of products2 | slice:0:10">
                     <td>{{item.name}}</td>
-                    <td>{{item.id}}</td>
                     <td>{{item.category}}</td>
                     <td>{{item.address}}</td>
-                    <td><img src="../../assets/edit-svgrepo-com.svg" alt="edit-icon"
-                            (click)="createHotelOffers(item.id)"></td>
+                    <td><img src="../../assets/plus-svgrepo-com.svg" alt="add-icon" (click)="createHotelOffers(item.id)"></td>
+                    
                 </tr>
             </table>
         </div>

@@ -8,10 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ExcursionComponent } from './excursion/excursion.component';
 import { HotelOffersComponent } from './hotel-offers/hotel-offers.component';
 import { HotelOfferBookingComponent } from './hotel-offers/hotel-offer-booking/hotel-offer-booking.component';
-import { AdminAddagencyComponent } from './admin/admin-addagency/admin-addagency.component';
-import { AdminAddhotelComponent } from './admin/admin-addhotel/admin-addhotel.component';
 import { HotelStaffComponent } from './hotel-staff/hotel-staff.component';
-import { AdminAdduserComponent } from './admin/admin-adduser/admin-adduser.component';
 import { MarketingComponent } from './marketing/marketing.component';
 import { ExcursionBookingComponent } from './excursion/excursion-booking/excursion-booking.component';
 import { PackageComponent } from './package/package.component';
@@ -27,10 +24,7 @@ export const routes: Routes = [
     { path: 'excursion', component: ExcursionComponent },
     { path: 'hotel', component: HotelOffersComponent },
     { path: 'hotel/booking', component: HotelOfferBookingComponent },
-    { path: 'admin/add-agency', component: AdminAddagencyComponent },
     { path: 'staff', component: HotelStaffComponent },
-    { path: 'admin/add-hotel', component: AdminAddhotelComponent },
-    { path: 'admin/add-user', component: AdminAdduserComponent },
     { path: 'staff', component: HotelStaffComponent },
     { path: 'marketing', component: MarketingComponent },
     { path: 'package', component: PackageComponent },
