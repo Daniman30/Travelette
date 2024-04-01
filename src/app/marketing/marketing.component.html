@@ -12,29 +12,37 @@
         <button class="add-agency-btn adds" (click)="showAddFacilities()">Añadir Facilidad</button>
     </div>
     <div class="filter-bar">
-        <button class="filter-hotel-btn lists">Paquetes</button>
+        <button class="filter-hotel-btn lists" (click)="listPackages()">Paquetes</button>
         <button class="filter-agency-btn lists" (click)="listExcursion()">Excursiones</button>
         <button class="filter-all-btn lists">Alojamientos</button>
         <button class="filter-all-btn lists" (click)="listFacility()">Facilidades</button>
     </div>
-    <div class="tabla" *ngIf="show === 'paquetes'">
+    <div class="tabla" *ngIf="show === 'package'">
         <table>
             <tr>
-                <th>Nombre</th>
+                <th>Description</th>
                 <th>ID</th>
-                <th>Direccion</th>
-                <th>Email</th>
-                <th>Fax</th>
+                <th>Precio</th>
+                <th>Capacidad</th>
+                <th>Duracion</th>
+                <th>Fecha inicio</th>
+                <th>Fecha fin</th>
+                <th>ID Agencia</th>
+                <th>Update</th>
                 <th>Borrar</th>
             </tr>
-            <!-- <tr *ngFor="let item of products | slice:0:10">
-                <td>{{item.name}}</td>
+            <tr *ngFor="let item of products | slice:0:10">
+                <td>{{item.description}}</td>
                 <td>{{item.id}}</td>
-                <td>{{item.address}}</td>
-                <td>{{item.electronicAddress}}</td>
-                <td>{{item.fax}}</td>
-                <td><img src="../../assets/delete-icon.svg" alt="delete-icon"></td>
-            </tr> -->
+                <td>{{item.price}}</td>
+                <td>{{item.capacity}}</td>
+                <td>{{item.duration}}</td>
+                <td>{{item.startDate}}</td>
+                <td>{{item.endDate}}</td>
+                <td>{{item.agencyID}}</td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updatePackage(item.id, item.description, item.price, item.capacity, item.duration, item.startDate, item.endDate, item.agencyID, item.dto)"></td>
+                <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deletePackages(item.id)"></td>
+            </tr>
         </table>
     </div>
 
@@ -50,9 +58,10 @@
                 <th>Lugar de llegada</th>
                 <th>Lugar de salida</th>
                 <th>Guia</th>
+                <th>Update</th>
                 <th>Delete</th>
             </tr>
-            <tr *ngFor="let item of excursions | slice:0:10">
+            <tr *ngFor="let item of products | slice:0:10">
                 <td>{{item.name}}</td>
                 <td>{{item.id}}</td>
                 <td>{{item.capacity}}</td>
@@ -62,7 +71,8 @@
                 <td>{{item.arrivalPlace}}</td>
                 <td>{{item.departurePlace}}</td>
                 <td>{{item.guia}}</td>
-                <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteExcursion(item.id)"></td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateExcursion(item.id, item.name, item.capacity, item.price, item.arrivalDate, item.departureDate, item.arrivalPlace, item.departurePlace, item.guia, item.agencyID)"></td>
+                <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteExcursion(item.id, item.numberOfDays)"></td>
             </tr>
         </table>
     </div>
@@ -90,10 +100,12 @@
         <table>
             <tr>
                 <th>Nombre</th>
+                <th>Update</th>
                 <th>Borrar</th>
             </tr>
             <tr *ngFor="let item of products | slice:0:10">
                 <td>{{item.name}}</td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateFacility(item.id, item.name)"></td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteFacility(item.id)"></td>
             </tr>
         </table>
@@ -105,24 +117,41 @@
             <div class="body">
                 <div class="top">
                     <img class="image" src="../../assets/img/agency.jpg" />
-                    <div class="Nombre">
-                        <div class="name">Nombre</div>
-                        <input class="textbox" type="text" id="Nombre">
-                        <div class="address">Fax</div>
-                        <input class="textbox" type="text" id="Fax">
+                    <div class="NombreDescrip">
+                        <div class="name">Description</div>
+                        <textarea class="packageDescrip" type="text" id="Description"></textarea>
                     </div>
                 </div>
                 <div class="bottom">
-                    <div class="category">Correo electrónico</div>
-                    <input class="textbox E" type="text" id="Email">
-                    <div class="address">Dirección</div>
-                    <input class="textbox E" type="text" id="Direccion">
-
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Price</div>
+                            <input class="minitextbox" type="number" id="Price">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Capacity</div>
+                            <input class="minitextbox" type="number" id="Capacity">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Duration</div>
+                            <input class="minitextbox" type="number" id="Duration">
+                        </div>
+                    </div>
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Start Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="StartDate">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">End Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="EndDate">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="bottom-line"></div>
             <div class="buttons-box">
-                <button class="button add-btn">Añadir Paquete</button>
+                <button class="button add-btn" (click)="createPackage()">Añadir Excursion</button>
                 <button class="button close-btn" (click)="showNothing()">Cerrar</button>
             </div>
         </div>
@@ -175,6 +204,7 @@
             </div>
         </div>
     </div>
+
     <div class="form" *ngIf="show === 'AddBooking'">
         <div class="container2">
             <div class="title">Añadir Alojamiento</div>
@@ -203,6 +233,7 @@
             </div>
         </div>
     </div>
+
     <div class="form" *ngIf="show === 'AddFacilities'">
         <div class="container2">
             <div class="title">Añadir Facilidad</div>
@@ -210,7 +241,7 @@
                 <div class="top">
                     <img class="image" src="../../assets/img/agency.jpg" />
                     <div class="Nombre">
-                        <div class="name">Nombre</div>
+                        <div class="name">Facilidad</div>
                         <input class="textbox" type="text" id="Nombre">
                     </div>
                 </div>

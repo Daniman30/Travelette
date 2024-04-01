@@ -13,6 +13,7 @@ import { MarketingComponent } from './marketing/marketing.component';
 import { ExcursionBookingComponent } from './excursion/excursion-booking/excursion-booking.component';
 import { PackageComponent } from './package/package.component';
 import { PackageBookingComponent } from './package/package-booking/package-booking.component';
+import { UpdatesComponent } from './updates/updates.component';
 
 
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
     { path: 'marketing', component: MarketingComponent },
     { path: 'package', component: PackageComponent },
     { path: 'excursion/booking', component: ExcursionBookingComponent },
+    { path: 'updates', component: UpdatesComponent },
     { path: 'package/booking', component: PackageBookingComponent }
 
 ];

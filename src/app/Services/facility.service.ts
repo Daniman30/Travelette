@@ -23,4 +23,8 @@ export class FacilityService {
     listFacility() {
         return this.httpClient.get<IApiListFacility[]>('http://localhost:5094/api/Facility/list')
     }
+
+    updateFacility(datos: IApiCreateFacility) {
+        return this.http.put('http://localhost:5094/api/Facility/update', datos)
+    }
 }

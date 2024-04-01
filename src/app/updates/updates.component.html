@@ -11,22 +11,191 @@
                     <img class="imageA" src="../../assets/img/agency.jpg" />
                     <div class="NombreA">
                         <div class="nameA">Nombre</div>
-                        <input class="textboxA" type="text" id="Nombre">
+                        <input class="textboxA" type="text" id="Nombre" [(ngModel)]="name">
                         <div class="addressA">Fax</div>
-                        <input class="textboxA" type="text" id="Fax">
+                        <input class="textboxA" type="text" id="Fax" [(ngModel)]="fax">
                     </div>
                 </div>
                 <div class="bottomA">
                     <div class="categoryA">Correo electrónico</div>
-                    <input class="textboxA EA" type="text" id="Email">
+                    <input class="textboxA EA" type="text" id="Email" [(ngModel)]="email">
                     <div class="addressA">Dirección</div>
-                    <input class="textboxA EA" type="text" id="Direccion">
+                    <input class="textboxA EA" type="text" id="Direccion" [(ngModel)]="address">
                 </div>
             </div>
             <div class="bottom-line"></div>
             <div class="buttons-boxA">
-                <button class="buttonA add-btnA" (click)="updateAgency(4)">Actualizar Agencia</button>
-                <button class="buttonA close-btnA" (click)="closeBtn()">Cerrar</button>
+                <button class="buttonA add-btnA" (click)="updateAgency()">Actualizar Agencia</button>
+                <button class="buttonA close-btnA" (click)="closeBtnA()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form" *ngIf="currentdata === 'AddFacilities'">
+        <div class="container2">
+            <div class="title">Añadir Facilidad</div>
+            <div class="body">
+                <div class="top">
+                    <img class="image" src="../../assets/img/agency.jpg" />
+                    <div class="Nombre">
+                        <div class="name">Facilidad</div>
+                        <input class="textbox" type="text" id="facility" [(ngModel)]="nameFacility">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-line"></div>
+            <div class="buttons-box">
+                <button class="button add-btn" (click)="updateFacility()">Añadir Facilidad</button>
+                <button class="button close-btn" (click)="closeBtnM()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="add" *ngIf="currentdata === 'addHotel'">
+        <div class="containerH">
+            <h1 class="titleH">Add Hotel</h1>
+            <!-- <div class="top-line"></div> -->
+            <div class="bodyH">
+                <div class="topH">
+                    <img class="imageH" src="../../assets/img/hotel.jpg" />
+                    <div class="NombreH">
+                        <div class="nameH">Nombre</div>
+                        <input class="textboxH" type="text" id="nameHotel" [(ngModel)]="nameHotel">
+                    </div>
+                </div>
+                <div class="bottomH">
+                    <div class="categoryH">Category</div>
+                    <input class="textboxH EH" type="text" id="categoryHotel"  [(ngModel)]="categoryHotel">
+                    <div class="addressH">Dirección</div>
+                    <input class="textboxH EH" type="text" id="addressHotel" [(ngModel)]="addressHotel">
+                </div>
+            </div>
+            <div class="bottom-line"></div>
+            <div class="buttons-boxH">
+                <button class="buttonH add-btnH" (click)="updateHotel()">Añadir Hotel</button>
+                <button class="buttonH close-btnH" (click)="closeBtnA()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form" *ngIf="currentdata === 'AddExcursion'">
+        <div class="container2">
+            <div class="title">Añadir Excursion</div>
+            <div class="body">
+                <div class="top">
+                    <img class="image" src="../../assets/img/agency.jpg" />
+                    <div class="Nombre">
+                        <div class="name">Nombre</div>
+                        <input class="textbox" type="text" id="NombreExc" [(ngModel)]="nameExcursion">
+                        <div class="address">Guia</div>
+                        <input class="textbox" type="text" id="GuiaExc" [(ngModel)]="guiaExcursion">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Capacity</div>
+                            <input class="minitextbox" type="number" id="CapacityExc" [(ngModel)]="capacityExcursion">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Price</div>
+                            <input class="minitextbox" type="number" id="PriceExc" [(ngModel)]="priceExcursion">
+                        </div>
+                    </div>
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Arrival Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="arrivalDateExc" [(ngModel)]="arrivalDateExcursion">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Departure Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="departureDateExc" [(ngModel)]="departureDateExcursion">
+                        </div>
+                    </div>
+                    <div class="category">Arrival Place</div>
+                    <input class="textbox E" type="text" id="arrivalPlaceExc" [(ngModel)]="arrivalPlaceExcursion">
+                    <div class="address">Departure Place</div>
+                    <input class="textbox E" type="text" id="departurePlaceExc" [(ngModel)]="departurePlaceExcursion">
+                </div>
+            </div>
+            <div class="bottom-line"></div>
+            <div class="buttons-box">
+                <button class="button add-btn" (click)="updateExcursion()">Añadir Excursion</button>
+                <button class="button close-btn" (click)="closeBtnM()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form" *ngIf="currentdata === 'addOffer'">
+        <div class="container2">
+            <div class="title">Update Offer</div>
+            <div class="body">
+                <div class="top">
+                    <img class="image" src="../../assets/img/hotel.jpg" />
+                    <div class="Nombre">
+                        <div class="Nombre1">
+                            <div class="name">Primero rellena el formulario y despues selecciona enviar</div>
+                        </div>
+                        <div class="Nombre2">
+                            <div class="name">Precio</div>
+                            <input class="textbox" type="number" id="priceOffer" [(ngModel)]="priceOffers">
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="category">Descripcion</div>
+                    <input class="textbox E" type="text" id="descriptionOffer" [(ngModel)]="descriptionOffers">
+                    <div class="buttons-box">
+                        <button class="button add-btn" (click)="updateOffer()">Update</button>
+                        <button class="button close-btn" (click)="closeBtnS()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form" *ngIf="currentdata === 'AddPackage'">
+        <div class="container2">
+            <div class="title">Añadir Paquete</div>
+            <div class="body">
+                <div class="top">
+                    <img class="image" src="../../assets/img/agency.jpg" />
+                    <div class="NombreDescrip">
+                        <div class="name">Description</div>
+                        <textarea class="packageDescrip" type="text" id="descriptionPackage" [(ngModel)]="descriptionPackage"></textarea>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Price</div>
+                            <input class="minitextbox" type="number" id="pricePackage" [(ngModel)]="pricePackage">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Capacity</div>
+                            <input class="minitextbox" type="number" id="capacityPackage" [(ngModel)]="capacityPackage">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">Duration</div>
+                            <input class="minitextbox" type="number" id="durationPackage" [(ngModel)]="durationPackage">
+                        </div>
+                    </div>
+                    <div class="Doubles">
+                        <div class="miniNombre">
+                            <div class="address">Start Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="startDatePackage" [(ngModel)]="startDatePackage">
+                        </div>
+                        <div class="miniNombre">
+                            <div class="address">End Date</div>
+                            <input class="minitextbox Dates" type="datetime-local" id="endDatePackage" [(ngModel)]="endDatePackage">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-line"></div>
+            <div class="buttons-box">
+                <button class="button add-btn" (click)="updatePackage()">Añadir Excursion</button>
+                <button class="button close-btn" (click)="closeBtnM()">Cerrar</button>
             </div>
         </div>
     </div>

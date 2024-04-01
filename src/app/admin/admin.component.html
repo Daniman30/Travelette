@@ -32,7 +32,7 @@
                 <td>{{item.address}}</td>
                 <td>{{item.electronicAddress}}</td>
                 <td>{{item.fax}}</td>
-                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateAgency(item.id)"></td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateAgency(item.id, item.name, item.address, item.fax, item.electronicAddress)"></td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteAgency(item.id)"></td>
             </tr>
         </table>
@@ -45,6 +45,7 @@
                 <th>ID</th>
                 <th>Categoria</th>
                 <th>Direccion</th>
+                <th>Update</th>
                 <th>Borrar</th>
             </tr>
             <tr *ngFor="let item of products | slice:0:10">
@@ -52,6 +53,7 @@
                 <td>{{item.id}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.address}}</td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updateHotel(item.id, item.name, item.category, item.address)"></td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteHotel(item.id)"></td>
             </tr>
         </table>
@@ -61,16 +63,12 @@
         <table>
             <tr>
                 <th>Username</th>
-                <th>Tipo</th>
-                <th>Nacionalidad</th>
                 <th>Email</th>
                 <th>Borrar</th>
             </tr>
             <tr *ngFor="let item of products | slice:0:10">
-                <td>{{item.name}}</td>
-                <td>{{item.id}}</td>
-                <td>{{item.category}}</td>
-                <td>{{item.address}}</td>
+                <td>{{item.userName}}</td>
+                <td>{{item.email}}</td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deleteUser(item.id)"></td>
             </tr>
         </table>

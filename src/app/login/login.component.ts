@@ -1,8 +1,7 @@
-import { LoginService } from '../Services/login.service';
+import { UserService } from '../Services/user.service';
 import { Component } from '@angular/core';
 import { SignupComponent } from '../register/signup.component';
-import { Router, RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router'
+import { Router, RouterOutlet, RouterModule } from '@angular/router';
 import { IdService } from '../Services/MovimientoDatos/id.service';
 
 @Component({
@@ -16,7 +15,7 @@ import { IdService } from '../Services/MovimientoDatos/id.service';
 export class LoginComponent {
     constructor(
         private router: Router,
-        private loginService: LoginService,
+        private userService: UserService,
         private idService: IdService) { }
 
     loginPost() {
@@ -25,7 +24,7 @@ export class LoginComponent {
             password: (document.getElementById('password') as HTMLInputElement).value
         }
 
-        this.loginService.loginPost(post).subscribe({
+        this.userService.loginPost(post).subscribe({
             next: (response) => {
                 this.idService.changeId(post.userName, response.toString())
                 this.router.navigate(['../home']);

@@ -22,4 +22,8 @@ export class HotelOffersService {
     listHotelOffers() {
         return this.httpClient.get<IApiListHotelOffer[]>('http://localhost:5094/api/LodgingOffer/list')
     }
+
+    updateHotelOffer(data: IApiCreateHotelOffer) {
+        return this.http.put('http://localhost:5094/api/LodgingOffer/update', data)
+    }
 }

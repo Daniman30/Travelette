@@ -216,3 +216,25 @@ img {
 .miniNombre {
     width: 238px;
 }
+
+.packageDescrip {
+    display: flex;
+    width: 60%;
+    height: 5.3rem;
+    background-color: #FEC1FF;
+    border-color: #000;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.NombreDescrip {
+    display: flex;
+    width: 32rem;
+    height: 7.5rem;
+    gap: 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+    
+}

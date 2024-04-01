@@ -2,8 +2,9 @@ import { HotelService } from '../Services/hotel.service';
 import { Component, ElementRef } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RegisterService } from '../Services/register.service';
+import { UserService } from '../Services/user.service';
 import { AgencyService } from '../Services/agency.service';
+import { UpdateService } from '../Services/MovimientoDatos/update.service';
 
 @Component({
     selector: 'app-admin',
@@ -17,8 +18,10 @@ export class AdminComponent {
 
     constructor(private agencyService: AgencyService,
         private hotelService: HotelService,
-        private registerService: RegisterService,
+        private userService: UserService,
         private el: ElementRef,
+        private updateService: UpdateService,
+        private router: Router
     ) { }
 
     products: any[] = []
@@ -53,7 +56,8 @@ export class AdminComponent {
     }
 
     listUser() {
-
+        this.userService.listUsers().subscribe((data) => (this.products = data))
+        this.currentdata = "user"
     }
 
     deleteHotel(id: number) {
@@ -91,7 +95,7 @@ export class AdminComponent {
         this.hotelService.createHotelPost(post).subscribe({
             next: (response) => { this.listHotel() }
         })
-        
+
     }
 
     registerPost() {
@@ -104,7 +108,8 @@ export class AdminComponent {
         let post = {
             userName: (document.getElementById('userName') as HTMLInputElement).value,
             email: (document.getElementById('email') as HTMLInputElement).value,
-            nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
+            // nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
+            nacionality: parseInt((document.getElementById('nacionality') as HTMLInputElement).value),
             password: password.value,
             role: (document.getElementById('userType') as HTMLInputElement).value
         }
@@ -133,7 +138,7 @@ export class AdminComponent {
             passwordError.textContent = 'The password must contain at least one special character';
         }
         else {
-            this.registerService.registerPost(post).subscribe({
+            this.userService.registerPost(post).subscribe({
                 next: (response) => { this.listUser() }
             })
         }
@@ -156,8 +161,23 @@ export class AdminComponent {
         }
     }
 
-    updateAgency(id: number) {
-        
+    updateAgency(id: number, name: string, address: string, fax: string, email: string) {
+        this.updateService.id = id
+        this.updateService.name = name
+        this.updateService.address = address
+        this.updateService.fax = fax
+        this.updateService.email = email
+        this.updateService.typeService = 'addAgency'
+        this.router.navigate(['../updates'])
+    }
+
+    updateHotel(id: number, name: string, category: string, address: string) {
+        this.updateService.idHotel = id
+        this.updateService.nameHotel = name
+        this.updateService.categoryHotel = category
+        this.updateService.addressHotel = address
+        this.updateService.typeService = 'addHotel'
+        this.router.navigate(['../updates'])
     }
 }
 

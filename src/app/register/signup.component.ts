@@ -2,28 +2,26 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router'
-import { RegisterService } from '../Services/register.service';
+import { UserService } from '../Services/user.service';
 import { IdService } from '../Services/MovimientoDatos/id.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../Services/Models/listAgency.interface';
 
 @Component({
     selector: 'app-signup',
     standalone: true,
-    imports: [RouterOutlet, LoginComponent, SignupComponent, RouterModule, CommonModule],
+    imports: [RouterOutlet, SignupComponent, RouterModule, CommonModule],
     templateUrl: './signup.component.html',
     styleUrl: './signup.component.css'
 })
 export class SignupComponent implements OnInit {
 
-    constructor(private registerService: RegisterService,
+    constructor(private userService: UserService,
         private router: Router,
         private el: ElementRef,
         private http: HttpClient,
         private idService: IdService) { }
 
-    user = new User();
     registerPost() {
 
         event?.preventDefault();
@@ -31,11 +29,13 @@ export class SignupComponent implements OnInit {
         const password = document.getElementById('password') as HTMLInputElement
         const passwordError = this.el.nativeElement.querySelector('#passwordError');
         const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
+        const nacionalitySelect = document.querySelector('select[name="nacionality"]') as HTMLSelectElement;
 
         let post = {
             userName: (document.getElementById('userName') as HTMLInputElement).value,
             email: (document.getElementById('email') as HTMLInputElement).value,
-            nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
+            // nacionality: nacionalitySelect.value,
+            nacionality: parseInt(nacionalitySelect.value),
             password: password.value,
             role: "Tourist"
         }
@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
             passwordError.textContent = 'The password must contain at least one special character';
         }
         else {
-            this.registerService.registerPost(post).subscribe({
+            this.userService.registerPost(post).subscribe({
                 next: (response) => {
                     this.idService.changeId(post.userName, response.toString());
                     if (localStorage.getItem('access_token')) {
@@ -100,11 +100,11 @@ export class SignupComponent implements OnInit {
         }
     }
 
-    opciones: string[] = []
+    countries: any[] = []
 
     func() {
-        this.http.get<string[]>('assets/countries.json').subscribe(
-            data => { this.opciones = data })
+        this.http.get<string[]>('http://localhost:5094/api/Nationality/list').subscribe(
+            data => { this.countries = data })
     }
 
     ngOnInit(): void {

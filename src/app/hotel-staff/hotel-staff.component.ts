@@ -1,13 +1,14 @@
 import { HotelOffersService } from '../Services/hotel-offers.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { HotelService } from '../Services/hotel.service';
+import { UpdateService } from '../Services/MovimientoDatos/update.service';
 
 @Component({
     selector: 'app-hotel-staff',
     standalone: true,
-    imports: [RouterModule, CommonModule],
+    imports: [RouterModule, CommonModule, RouterOutlet],
     templateUrl: './hotel-staff.component.html',
     styleUrl: './hotel-staff.component.css'
 })
@@ -15,11 +16,12 @@ export class HotelStaffComponent implements OnInit {
 
     constructor(private hotelOffersService: HotelOffersService,
         private hotelService: HotelService,
+        private updateService: UpdateService,
         private router: Router) { }
     NombreHotel = "Selecciona un Hotel"
 
-    products: any[] = []
-    products2: any[] = []
+    offers: any[] = []
+    hotels: any[] = []
 
     ngOnInit(): void {
         this.listHotel();
@@ -27,7 +29,7 @@ export class HotelStaffComponent implements OnInit {
     }
 
     listHotelOffers() {
-        this.hotelOffersService.listHotelOffers().subscribe((data) => (this.products = data))
+        this.hotelOffersService.listHotelOffers().subscribe((data) => (this.offers = data))
     }
 
     createHotelOffers(idHotel: number) {
@@ -42,10 +44,19 @@ export class HotelStaffComponent implements OnInit {
     }
 
     listHotel() {
-        this.hotelService.listHotels().subscribe((data) => (this.products2 = data))
+        this.hotelService.listHotels().subscribe((data) => (this.hotels = data))
     }
 
     DeleteHotelOffer(id: number) {
         this.hotelOffersService.deleteHotelOffer(id).subscribe(() => { this.listHotel() })
+    }
+
+    updateHotelOffer(id: number, hotelId: number, description: string, price: number) {
+        this.updateService.idOffers = id
+        this.updateService.hotelIdOffers = hotelId
+        this.updateService.descriptionOffers = description
+        this.updateService.priceOffers = price
+        this.updateService.typeService = 'addOffer'
+        this.router.navigate(['../updates'])
     }
 }

@@ -24,7 +24,7 @@ export class AgencyService {
         return this.http.delete(`http://localhost:5094/api/Agency/delete?agencyId=${id}`)
     }
 
-    updateAgency(id: number, datos: IApiCreateAgency) {
-        return this.http.put(`http://localhost:5094/api/Agency/update?agencyId=${id}`, datos)
+    updateAgency(datos: IApiCreateAgency) {
+        return this.http.put(`http://localhost:5094/api/Agency/update`, datos)
     }
 }

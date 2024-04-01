@@ -22,4 +22,8 @@ export class HotelService {
     listHotels() {
         return this.httpClient.get<IApiListHotel[]>('http://localhost:5094/api/Hotel/list')
     }
+
+    updateHotel(data: IApiListHotel) {
+        return this.http.put('http://localhost:5094/api/Hotel/update', data)
+    }
 }

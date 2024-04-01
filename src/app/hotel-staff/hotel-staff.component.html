@@ -12,21 +12,18 @@
                     <th>ID</th>
                     <th>Descripcion</th>
                     <th>Precio</th>
-                    <th>Hotel id</th>
-                    <th>Añadir</th>
+                    <th>Hotel</th>
                     <th>Editar</th>
                     <th>Borrar</th>
                 </tr>
-                <tr *ngFor="let item of products | slice:0:30">
-                    <td>{{item.lodgingOfferId}}</td>
+                <tr *ngFor="let item of offers | slice:0:30">
+                    <td>{{item.id}}</td>
                     <td>{{item.description}}</td>
                     <td>{{item.price}}</td>
-                    <td>{{item.hotelDto}}</td>
-                    <td><img src="../../assets/plus-svgrepo-com.svg" alt="edit-icon"
-                        ></td>
-                <td><img src="../../assets/edit-svgrepo-com.svg" alt=""></td>
+                    <td>{{item.hotelDto.name}}</td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="" (click)="updateHotelOffer(item.id, item.hotelDto.id, item.description, item.price)"></td>
                     <td><img src="../../assets/delete-icon.svg" alt="delete-icon"
-                            (click)="DeleteHotelOffer(item.lodgingOfferId)"></td>
+                            (click)="DeleteHotelOffer(item.id)"></td>
                 </tr>
             </table>
             <table>
@@ -36,7 +33,7 @@
                     <th>Direccion</th>
                     <th>Añadir</th>
                 </tr>
-                <tr *ngFor="let item of products2 | slice:0:10">
+                <tr *ngFor="let item of hotels | slice:0:10">
                     <td>{{item.name}}</td>
                     <td>{{item.category}}</td>
                     <td>{{item.address}}</td>

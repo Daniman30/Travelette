@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { IApiCreateExcursion } from './Models/listAgency.interface';
+import { IApiCreateExcursion, IApiListExcursion } from './Models/listAgency.interface';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,10 +14,14 @@ export class ExcursionService {
     }
 
     listExcursion() {
-        return this.http.get<IApiCreateExcursion[]>('http://localhost:5094/api/Excursion/list')
+        return this.http.get<IApiListExcursion[]>('http://localhost:5094/api/Excursion/list')
     }
 
     deleteExcursion(id: number) {
         return this.http.delete(`http://localhost:5094/api/Excursion/delete?excursion=${id}`)
+    }
+
+    updateExcursion(data: IApiListExcursion) {
+        return this.http.put('http://localhost:5094/api/Excursion/update', data)
     }
 }
