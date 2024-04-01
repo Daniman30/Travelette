@@ -1,5 +1,6 @@
+import { MovHotelService } from '../../Services/MovimientoDatos/mov-hotel.service';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { HotelService } from '../../Services/hotel.service';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeOfertaComponent implements OnInit {
 
-    constructor(private hotelService: HotelService) { }
+    constructor(private hotelService: HotelService,
+        private movHotelService: MovHotelService,
+        private router: Router) { }
 
     products: any[] = []
 
@@ -20,5 +23,12 @@ export class HomeOfertaComponent implements OnInit {
         this.hotelService.listHotels().subscribe((data) => (this.products = data))
     }
 
-
+    ViewHotel(id: number, name: string, category: string, address: string, lodgingOffers: any) {
+        this.movHotelService.MovHotel.id = id
+        this.movHotelService.MovHotel.name = name
+        this.movHotelService.MovHotel.category = category
+        this.movHotelService.MovHotel.address = address
+        this.movHotelService.MovHotel.lodgingOffers = lodgingOffers
+        this.router.navigate(['../hotel/booking'])
+    }
 }

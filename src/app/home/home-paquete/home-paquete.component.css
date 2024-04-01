@@ -4,6 +4,7 @@
 
 .HomePaquete {
     display: flex;
+    flex-direction: row;
     width: 1062;
     align-items: flex-start;
     gap: 24px;

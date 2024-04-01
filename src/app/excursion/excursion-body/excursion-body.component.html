@@ -4,10 +4,35 @@
 <div class="excursion-body">
     <app-sort-block-excursion></app-sort-block-excursion>
     <p class="divide">Showing 4 of 257 places</p>
-    <app-excursion-body-offers></app-excursion-body-offers>
-    <app-excursion-body-offers></app-excursion-body-offers>
-    <app-excursion-body-offers></app-excursion-body-offers>
-    <app-excursion-body-offers></app-excursion-body-offers>
+    <div class="excursion-single" *ngFor="let item of products| slice:0:4">
+        <img src="" alt="Imagen de agencia">
+        <div class="excursion-single-body">
+            <div class="first-line">
+                <div class="left-first-line">
+                    <h5>Capacity: {{item.capacity}}</h5>
+                </div>
+                <div class="right-first-line">
+                    <p>starting from</p>
+                    <p class="price">${{item.price}}</p>
+                </div>
+            </div>
+            <div class="middle-line">
+                <div class="middle-line-inside">
+                    <h1>{{item.name}}</h1>
+                </div>
+            </div>
+            <div class="first-line">
+                <h5>De: {{item.departurePlace}}</h5>
+                <h5>A: {{item.arrivalPlace}}</h5>
+            </div>
+            <div class="rectangle"></div>
+            <div class="last-line">
+                <div class="button">
+                    <button (click)="ViewExcursion(item.id, item.name, item.capacity, item.price, item.departure, item.arrivalPlace, item.departureDate, item.arrivalDate, item.guia, item.agencyID)">View Deals</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="more-results">
         <button class="btn-text">Show more results</button>
     </div>

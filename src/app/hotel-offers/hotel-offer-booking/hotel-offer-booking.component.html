@@ -5,28 +5,28 @@
     <div class="title-frame">
         <div class="title-text">
             <div class="title-name">
-                Hotel Melia
+                {{hotelName}}                
                 <div class="stars">
+                    <!-- <img src="../../assets/Star.svg" />
                     <img src="../../assets/Star.svg" />
                     <img src="../../assets/Star.svg" />
                     <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" />
+                    <img src="../../assets/Star.svg" /> -->
                 </div>
             </div>
             <div class="title-details">
                 <div class="location">
                     <img src="../../assets/Location.svg" />
-                    <div class="location-text">La Habana, Vedado</div>
+                    <div class="location-text">{{hotelAddress}}</div>
                 </div>
             </div>
         </div>
         <div class="price_and_booking">
             <p>
-                <span class="price_number">$300</span><span class="night">/night</span>
+                <!-- <span class="price_number">$300</span><span class="night">/night</span> -->
             </p>
             <div class="booking-btns">
-                <button class="booking-btn">Buy Now</button>
+                <!-- <button class="booking-btn">Buy Now</button> -->
             </div>
         </div>
     </div>
@@ -47,23 +47,12 @@
         <!-- <hr class="" /> -->
         <div class="overview_and_amenities">
             <div class="overview-box">
-                <div class="overview-title">Review</div>
+                <div class="overview-title">Category</div>
                 <div class="overview-text">
-                    Located in Taksim Gmsuyu, the heart of Istanbul, the CVK Park
-                    Bosphorus Hotel Istanbul has risen from the ashes of the historic Park
-                    Hotel, which also served as Foreign Affairs Palace 120 years ago and
-                    is hosting its guests by assuming this hospitality mission. With its
-                    452 luxurious rooms and suites, 8500 m2 SPA and fitness area, 18
-                    meeting rooms including 4 dividable ones and 3 terraces with Bosphorus
-                    view, Istanbuls largest terrace with Bosphorus view (4500 m2) and
-                    latest technology infrastructure, CVK Park Bosphorus Hotel Istanbul is
-                    destined to be the popular attraction point of the city. Room and
-                    suite categories at various sizes with city and Bosphorus view, as
-                    well as 68 separate luxury suites, are offered to its special guests
-                    as a wide variety of selection.
+                    {{hotelCategory}}
                 </div>
             </div>
-            <div class="amenities-box">
+            <!-- <div class="amenities-box">
                 <div class="amenitie">
                     <div class="amenitie-interior">
                         <img class="stardust" src="../../assets/Stars.svg" />
@@ -88,60 +77,26 @@
                         <div class="amenitie-text">Swimming Pool</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <hr class="">
             <div class="availablerooms-box">
                 <div class="availablerooms-title">
                     Available Offers
                 </div>
-                <div class="availablerooms-table">
-                    <div class="availableroom">
+                <div class="availablerooms-table" *ngFor="let item of products | slice:0:4">
+                    <div class="availableroom" >
                         <div class="room-info">
                             <img class="room-foto" src="../../assets/room1.png">
-                            <div class="room-text">Superior room - 1 double bed or 2 twin beds</div>
+                            <div class="room-text">{{item.description}}</div>
                         </div>
                         <div class="room-booking">
-                            <p> <span class="room-price">$300</span> <span class="room-night">/night</span> </p>
+                            <p> <span class="room-price">${{item.price}}</span> <span class="room-night">/night</span> </p>
                             <button class="room-book-btn">Buy Now</button>
                         </div>
                     </div>
                     <hr class="line2">
-                    <div class="availableroom">
-                        <div class="room-info">
-                            <img class="room-foto" src="../../assets/room2.png">
-                            <div class="room-text">Superior room - City view - 1 double bed or 2 twin beds</div>
-                        </div>
-                        <div class="room-booking">
-                            <p> <span class="room-price">$320</span> <span class="room-night">/night</span> </p>
-                            <button class="room-book-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <hr class="line2">
-                    <div class="availableroom">
-                        <div class="room-info">
-                            <img class="room-foto" src="../../assets/room3.png">
-                            <div class="room-text">Superior room - City view - 1 double bed or 2 twin beds</div>
-                        </div>
-                        <div class="room-booking">
-                            <p> <span class="room-price">$380</span> <span class="room-night">/night</span> </p>
-                            <button class="room-book-btn">Buy Now</button>
-                        </div>
-                    </div>
-                    <hr class="line2">
-                    <div class="availableroom">
-                        <div class="room-info">
-                            <img class="room-foto" src="../../assets/room4.png">
-                            <div class="room-text">Superior room - City view - 1 double bed or 2 twin beds</div>
-                        </div>
-                        <div class="room-booking">
-                            <p> <span class="room-price">$420</span> <span class="room-night">/night</span> </p>
-                            <button class="room-book-btn">Buy Now</button>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <hr class="">
-            <hr class="">
         </div>
     </div>
 </div>

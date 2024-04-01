@@ -7,19 +7,19 @@
         <button class="button" routerLink="../excursion">See more excursions</button>
     </div>
     <div class="Body">
-        <div class="block" *ngFor="let item of products">
-            <div class="Rectangle" routerLink="../excursion/booking">
+        <div class="block" *ngFor="let item of products | slice:0:9">
+            <div class="Rectangle"  (click)="ViewExcursion(item.id, item.name, item.capacity, item.price, item.departurePlace, item.arrivalPlace, item.departureDate, item.arrivalDate, item.guia, item.agencyID)">
                 <div class="blockImg">
                     <img src="../../../assets/img/cayo-santa-maria.jpg" alt="agecia1">
                 </div>
                 <div class="blockText">
                     <p class="agencyName" id="AgNa1">{{item.name}}</p>
                     <div class="details">
-                        <p class="detail">Tropical </p>
+                        <p class="detail">Capacidad: {{item.capacity}}</p>
                         <p class="detail separator">•</p>
-                        <p class="detail">Island </p>
-                        <p class="detail separator">•</p>
-                        <p class="detail">Paradise</p>
+                        <p class="detail">${{item.price}} </p>
+                        <!-- <p class="detail separator">•</p>
+                        <p class="detail"></p> -->
                     </div>
                 </div>
             </div>

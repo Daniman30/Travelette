@@ -8,27 +8,15 @@
             <button class="button" routerLink="../package">See more packages</button>
         </div>
         <div class="HomePaquete">
-            <div class="block">
+            <div class="block" *ngFor="let item of products| slice:0:2">
                 <img src="../../../assets/img/Avion costa.jpeg" alt="">
                 <div class="body">
                     <div class="rectangle"></div>
                     <div class="body2">
                         <div class="texts">
-                            <h1 class="h1Esp">Coast Package</h1>
-                            <h2 class="h2Esp">Visit the incredible island</h2>
-                        </div>
-                        <button class="button" routerLink="../package/booking">Show Package</button>
-                    </div>
-                </div>
-            </div>
-            <div class="block">
-                <img src="../../assets/img/avion.jpeg" alt="">
-                <div class="body">
-                    <div class="rectangle"></div>
-                    <div class="body2">
-                        <div class="texts">
-                            <h1 class="h1Esp">Island Package</h1>
-                            <h2 class="h2Esp">Visit the incredible coast</h2>
+                            <h1 class="h1Esp">{{item.description}}</h1>
+                            <h2 class="h2Esp">Duration: {{item.duration}} min</h2>
+                            <h2 class="h2Esp">Price: ${{item.price}}</h2>
                         </div>
                         <button class="button" routerLink="../package/booking">Show Package</button>
                     </div>

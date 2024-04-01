@@ -18,7 +18,7 @@
                     <h4>{{item.category}}</h4>
                     <h4>{{item.address}}</h4>
                 </div>
-                <button class="oferta" routerLink="../hotel/booking">Book Hotel</button>
+                <button class="oferta" (click)="ViewHotel(item.id, item.name, item.category, item.address, item.lodgingOffers)">Book Hotel</button>
             </div>
         </div>
     </div>

@@ -4,16 +4,20 @@
 <div class="container">
     <div class="titlebar">
         <div class="titledetails">
-            <div class="name">Nombre Excursion</div>
+            <div class="name">{{excursionName}}</div>
             <div class="details">
                 <div class="location">
                     <img class="location-img" src="../../../assets/Location.svg" />
-                    <div class="location-text">En algun lugar</div>
+                    <div class="location-text">{{excursionArrivalPlace}}</div>
+                </div>
+                <div class="location">
+                    <img class="location-img" src="../../../assets/Location.svg" />
+                    <div class="location-text">{{excursionDeparturePlace}}</div>
                 </div>
             </div>
         </div>
         <div class="pricebox">
-            <div class="price">$300</div>
+            <div class="price">${{excursionPrice}}</div>
             <div class="btns-box">
                 <button class="buy-btn">Comprar</button>
             </div>
@@ -21,33 +25,39 @@
     </div>
     <img class="mainimg" src="../../../assets/img/avion.jpeg" />
     <div class="description-box">
-        <div class="description-imgs">
-            <div class="description-imgs-title">
-                <div class="description-imgs-title-text">Basic Economy Features</div>
-            </div>
-            <div class="imgs">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-            </div>
-        </div>
-        <div class="warning-box">
-            <div class="warning-title">Emirates Airlines Policies</div>
-            <div class="warnings">
-                <div class="warning1">
-                    <img class="watch" src="../../../assets/ion_stopwatch.svg">
-                    <div class="warning-text">Pre-flight cleaning, installation of cabin HEPA filters.</div>
+        <div class="main">
+            <div class="main-header">
+                <div class="date">
+                    <p>Departure</p>
+                    <p>{{(excursionDepartureDate).toLocaleDateString()}}</p>
+                    <!-- <p>{{excursionDepartureDate.toLocaleDateString()}}</p> -->
+                    <p>{{excursionDeparturePlace}}</p>
                 </div>
-                <div class="warning2">
-                    <img class="watch" src="../../../assets/ion_stopwatch.svg">
-                    <div class="warning-text">Pre-flight cleaning, installation of cabin HEPA filters.</div>
+                <div class="date">
+                    <p>Arrival</p>
+                    <p>{{excursionArrivalDate.toLocaleDateString()}}</p>
+                    <p>{{excursionArrivalPlace}}</p>
                 </div>
             </div>
+            <div class="content">
+                <div class="agency-facilities">
+                    <p class="date">Guia: {{excursionGuia}}</p>
+                    <p class="date">Capacidad: {{excursionCapacity}}</p>
+                </div>
+                <div class="travel">
+                    <div class="departure">
+                        <div class="departure-date">{{excursionDepartureDate.toLocaleTimeString()}}</div>
+                    </div>
+                    <div class="center-icons">
+                        <img class="horizontal-lines" src="../../../../assets/line1.svg">
+                        <img class="main-icon" src="../../../../assets/airplane.svg">
+                        <img class="horizontal-lines" src="../../../../assets/line2.svg">
+                    </div>
+                    <div class="arrival">
+                        <div class="arrival-date">{{excursionArrivalDate.toLocaleTimeString()}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <app-excursion-booking-details class="booking"></app-excursion-booking-details>
-        <app-excursion-booking-details class="booking"></app-excursion-booking-details>
     </div>
 </div>

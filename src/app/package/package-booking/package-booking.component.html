@@ -4,50 +4,78 @@
 <div class="container">
     <div class="titlebar">
         <div class="titledetails">
-            <div class="name">Nombre Paquete</div>
+            <div class="name">{{packageDescription}}</div>
             <div class="details">
                 <div class="location">
-                    <img class="location-img" src="../../../assets/Location.svg" />
-                    <div class="location-text">En algun lugar</div>
+                    <div class="location-text">Capacidad: {{packageCapacity}}</div>
+                </div>
+                <div class="location">
+                    <div class="location-text">Duration: {{packageDuration}} min</div>
                 </div>
             </div>
         </div>
         <div class="pricebox">
-            <div class="price">$300</div>
+            <div class="price">${{packagePrice}}</div>
             <div class="btns-box">
                 <button class="buy-btn">Comprar</button>
             </div>
         </div>
     </div>
+    <div class="main-header">
+        <div class="date">
+            <p>Departure</p>
+            <p>{{(packageStartDate).toLocaleDateString()}}</p>
+            <!-- <p>{{excursionDepartureDate.toLocaleDateString()}}</p> -->
+            <p>{{packageStartDate}}</p>
+        </div>
+        <div class="date">
+            <p>Arrival</p>
+            <p>{{packageEndDate.toLocaleDateString()}}</p>
+            <p>{{packageEndDate}}</p>
+        </div>
+    </div>
     <img class="mainimg" src="../../../assets/img/avion.jpeg" />
-    <div class="description-box">
-        <div class="description-imgs">
-            <div class="description-imgs-title">
-                <div class="description-imgs-title-text">Basic Economy Features</div>
+    <div class="description-box" *ngFor="let item of packageFacilityDtos | slice:0:4">
+        <div class="main">
+            <div class="main-header">
+                <div class="date">Return Wed, Dec 8</div>
+                <div class="duration">2h 28m</div>
             </div>
-            <div class="imgs">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
-                <img class="img1" src="../../../assets/hotelroom1.png">
+            <div class="content">
+                <div class="agency-facilities">
+                    <div class="agency">
+                        <img class="agency-img" src="../../../../assets/img/agency.jpg">
+                        <div class="agency-text">
+                            <div class="agency-name">Emirates</div>
+                            <div class="agency-info">Airbus A320</div>
+                        </div>
+                    </div>
+                    <div class="facilities">
+                        <img class="facilities-icon" src="../../../../assets/ion_bed.svg">
+                        <div class="line"></div>
+                        <img class="facilities-icon" src="../../../../assets/Wifi.svg">
+                        <div class="line"></div>
+                        <img class="facilities-icon" src="../../../../assets/ion_fast-food.svg">
+                        <div class="line"></div>
+                        <img class="facilities-icon" src="../../../../assets/camara.svg">
+                    </div>
+                </div>
+                <div class="travel">
+                    <div class="departure">
+                        <div class="departure-date">12:00pm</div>
+                        <div class="departure-place">Vedado, La Habana</div>
+                    </div>
+                    <div class="center-icons">
+                        <img class="horizontal-lines" src="../../../../assets/line2.svg">
+                        <img class="main-icon" src="../../../../assets/airplane.svg">
+                        <img class="horizontal-lines" src="../../../../assets/line1.svg">
+                    </div>
+                    <div class="arrival">
+                        <div class="arrival-date">12:00pm</div>
+                        <div class="arrival-place">Varadero, Matanzas</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="warning-box">
-            <div class="warning-title">Emirates Airlines Policies</div>
-            <div class="warnings">
-                <div class="warning1">
-                    <img class="watch" src="../../../assets/ion_stopwatch.svg">
-                    <div class="warning-text">Pre-flight cleaning, installation of cabin HEPA filters.</div>
-                </div>
-                <div class="warning2">
-                    <img class="watch" src="../../../assets/ion_stopwatch.svg">
-                    <div class="warning-text">Pre-flight cleaning, installation of cabin HEPA filters.</div>
-                </div>
-            </div>
-        </div>
-        <app-package-booking-details class="booking"></app-package-booking-details>
-        <app-package-booking-details class="booking"></app-package-booking-details>
     </div>
 </div>

@@ -210,3 +210,17 @@ export interface IApiListExtendedExcursion {
     numberOfDays: number
 }
 
+export interface LodgingOffer {
+    id: number;
+    hotelId: number;
+    description: string;
+    price: number;
+}
+
+export interface Hotel {
+    lodgingOffers: LodgingOffer[];
+    id: number;
+    name: string;
+    category: string;
+    address: string;
+}
