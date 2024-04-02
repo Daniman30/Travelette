@@ -140,8 +140,8 @@
                         <div class="Ublock">
                             <p class="UText">Tipo de usuario</p>
                             <select class="Utextbox" name="userType" id="userType">
-                                <option value="admin">Marketing</option>
-                                <option value="admin">Personal del Hotel</option>
+                                <option value="SuperAdmin">Marketing</option>
+                                <option value="SuperAdmin">Personal del Hotel</option>
                             </select>
                         </div>
                         <div class="Ublock">
@@ -150,7 +150,9 @@
                         </div>
                         <div class="Ublock">
                             <p class="UText">Nacionality</p>
-                            <input class="Utextbox" type="text" name="nacionality" id="nacionality">
+                            <select class="textbox" name="nacionality">
+                                <option *ngFor="let country of countries;" [value]="country.id">{{ country.name }}</option>
+                            </select>
                         </div>
                         <div class="Ublock">
                             <p class="UText">Email</p>

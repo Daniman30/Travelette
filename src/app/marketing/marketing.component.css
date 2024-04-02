@@ -238,3 +238,15 @@ img {
     border-radius: 0.25rem 0.25rem 0rem 0rem;
     
 }
+
+.info{
+    display: flex;
+    flex-direction: row;
+}
+
+.descripcionOfertaAsociada {
+    border-radius: 0.5rem;
+    border: 1.5px solid #000;
+    width: 130px;
+    height: 28px;
+}

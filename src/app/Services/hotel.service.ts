@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IApiCreateHotel, IApiListHotel } from './Models/listAgency.interface';
+import { IApiCreateHotel, IApiListHotel, IApiListHotelResponse } from './Models/listAgency.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,7 @@ export class HotelService {
 
     httpClient = inject(HttpClient)
     listHotels() {
-        return this.httpClient.get<IApiListHotel[]>('http://localhost:5094/api/Hotel/list')
+        return this.httpClient.get<IApiListHotelResponse>('http://localhost:5094/api/Hotel/list')
     }
 
     updateHotel(data: IApiListHotel) {

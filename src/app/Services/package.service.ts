@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IApiCreatePackage, IApiListPackage } from './Models/listAgency.interface';
+import { IApiCreatePackage, IApiListPackageResponse } from './Models/listAgency.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,7 @@ export class PackageService {
 
     httpClient = inject(HttpClient)
     listPackages() {
-        return this.httpClient.get<IApiListPackage[]>('http://localhost:5094/api/Package/list')
+        return this.httpClient.get<IApiListPackageResponse>('http://localhost:5094/api/Package/list')
     }
 
     updatePackage(data: IApiCreatePackage) {

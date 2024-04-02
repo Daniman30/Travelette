@@ -7,6 +7,15 @@ export interface IApiListUser {
     role: string
 }
 
+export interface IApiListUserResponse {
+    items: IApiListUser[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
+}
+
 export interface IApiRegister {
     userName: string
     email: string
@@ -35,6 +44,15 @@ export interface IApiListAgency {
     electronicAddress: string
 }
 
+export interface IApiListAgencyResponse {
+    items: IApiListAgency[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
+}
+
 export interface IApiCreateHotel {
     name: string
     category: string
@@ -48,10 +66,28 @@ export interface IApiListHotel {
     address: string
 }
 
+export interface IApiListHotelResponse {
+    items: IApiListHotel[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
+}
+
 export interface IApiCreateHotelOffer {
     hotelId: number
     description: string
     price: number
+}
+
+export interface IApiListHotelOfferResponse {
+    items: IApiListHotelOffer[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
 }
 
 export interface IApiListHotelOffer {
@@ -66,6 +102,15 @@ export interface IApiCreateFacility {
 
 export interface IApiListFacility {
     name: string
+}
+
+export interface IApiListFacilityResponse {
+    items: IApiListFacility[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
 }
 
 export interface IApiCreateExcursion {
@@ -91,6 +136,15 @@ export interface IApiListExcursion {
     departurePlace: string
     guia: string
     agencyID: number
+}
+
+export interface IApiListExcursionResponse {
+    items: IApiListExcursion[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
 }
 
 export interface IApiCreatePackage {
@@ -185,6 +239,15 @@ export interface IApiListPackage {
     ]
 }
 
+export interface IApiListPackageResponse{
+    items: IApiListPackage[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
+}
+
 export interface IApiCreateExtendedExcursion {
     name: string
     capacity: number
@@ -223,4 +286,52 @@ export interface Hotel {
     name: string;
     category: string;
     address: string;
+}
+
+export interface IApiBook {
+    agencyOfferId: number
+    arrivalDate: Date
+    depurateDate: Date
+}
+
+export interface IApiBookAdmin {
+    agencyOfferId: number
+    arrivalDate: Date
+    depurateDate: Date
+    userName: string
+    nacionality: number
+}
+
+export interface IApiCreateAgencyOffer {
+    agencyId: number
+    LodgingOffers: {
+        offerId: number;
+        price: number;
+    }[];
+}
+
+export interface IApiBookPackage{
+    packageId: number
+    numberOfPeople: number
+    airlineCompany: string
+}
+
+export interface IApiBookPackageAdmin{
+    packageId: number
+    numberOfPeople: number
+    airlineCompany: string
+    userNme: string
+    nacionality: number
+}
+
+export interface IApiBookExcursion {
+    excursionId: number
+    numberOfCompanions: number
+}
+
+export interface IApiBookExcursionAdmin {
+    excursionId: number
+    numberOfCompanions: number
+    userName: string
+    nacionality: number
 }

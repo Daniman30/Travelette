@@ -20,10 +20,11 @@ export class PackageBodyComponent {
     products: any[] = []
 
     ngOnInit(): void {
-        this.packageService.listPackages().subscribe((data) => (this.products = data))
+        this.packageService.listPackages().subscribe((data) => (this.products = data.items))
     }
 
-    ViewPackage(name: string, capacity: number, price: number, duration: number, departureDate: Date, arrivalDate: Date, agencyID: number, facilityDtos: any) {
+    ViewPackage(id:number, name: string, capacity: number, price: number, duration: number, departureDate: Date, arrivalDate: Date, agencyID: number, facilityDtos: any) {
+        this.movPackageService.idPackage = id
         this.movPackageService.MovPackage.description = name
         this.movPackageService.MovPackage.capacity = capacity
         this.movPackageService.MovPackage.price = price

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../Services/user.service';
 import { AgencyService } from '../Services/agency.service';
 import { UpdateService } from '../Services/MovimientoDatos/update.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-admin',
@@ -21,7 +22,8 @@ export class AdminComponent {
         private userService: UserService,
         private el: ElementRef,
         private updateService: UpdateService,
-        private router: Router
+        private router: Router,
+        private http: HttpClient
     ) { }
 
     products: any[] = []
@@ -46,17 +48,17 @@ export class AdminComponent {
     }
 
     listAgency() {
-        this.agencyService.listAgencies().subscribe((data2) => (this.products2 = data2))
+        this.agencyService.listAgencies().subscribe((data2) => (this.products2 = data2.items))
         this.currentdata = "agency"
     }
 
     listHotel() {
-        this.hotelService.listHotels().subscribe((data) => (this.products = data))
+        this.hotelService.listHotels().subscribe((data) => (this.products = data.items))
         this.currentdata = "hotel"
     }
 
     listUser() {
-        this.userService.listUsers().subscribe((data) => (this.products = data))
+        this.userService.listUsers().subscribe((data) => (this.products = data.items))
         this.currentdata = "user"
     }
 
@@ -98,21 +100,33 @@ export class AdminComponent {
 
     }
 
-    registerPost() {
-        this.currentdata = 'addUser'
+    countries: any[] = []
 
+    func() {
+        this.http.get<string[]>('http://localhost:5094/api/Nationality/list').subscribe(data => { this.countries = data })
+    }
+
+    ngOnInit(): void {
+        this.func()
+    }
+
+    registerPost() {
+        console.log('post');
         const password = document.getElementById('password') as HTMLInputElement
         const passwordError = this.el.nativeElement.querySelector('#passwordError');
         const repeatPassword = (document.getElementById('Rpassword') as HTMLInputElement)
+        const nacionalitySelect = document.querySelector('select[name="nacionality"]') as HTMLSelectElement;
 
         let post = {
             userName: (document.getElementById('userName') as HTMLInputElement).value,
             email: (document.getElementById('email') as HTMLInputElement).value,
             // nacionality: (document.getElementById('nacionality') as HTMLInputElement).value,
-            nacionality: parseInt((document.getElementById('nacionality') as HTMLInputElement).value),
+            nacionality: parseInt(nacionalitySelect.value),
             password: password.value,
             role: (document.getElementById('userType') as HTMLInputElement).value
         }
+
+        console.log(post);
 
         const regexNumber = /\d/;
         const regexLowercase = /[a-z]/;

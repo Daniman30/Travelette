@@ -206,30 +206,62 @@
     </div>
 
     <div class="form" *ngIf="show === 'AddBooking'">
-        <div class="container2">
-            <div class="title">Añadir Alojamiento</div>
-            <div class="body">
-                <div class="top">
-                    <img class="image" src="../../assets/img/agency.jpg" />
-                    <div class="Nombre">
-                        <div class="name">Nombre</div>
-                        <input class="textbox" type="text" id="Nombre">
-                        <div class="address">Fax</div>
-                        <input class="textbox" type="text" id="Fax">
+        <div class="container">
+            <!-- <div class="title">
+                <h1>Staff del Hotel</h1>
+            </div>
+            <div class="divisor"> -->
+                <div class="form">
+                    <div class="container2">
+                        <div class="title">Add Agency Offer</div>
+                        <div class="body">
+                            <div class="top">
+                                <img class="image" src="../../assets/img/hotel.jpg" />
+                                <div class="Nombre">
+                                    <div class="Nombre1">
+                                        <div class="name">Establece un precio y selecciona una oferta</div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="Nombre2">
+                                            <h5 class="name">Precio</h5>
+                                            <input class="textbox" type="number" id="PrecioOfertaAgencia">
+                                        </div>
+                                        <div class="ofertaAsociada">
+                                            <h5>Oferta asociada</h5>
+                                            <p class="descripcionOfertaAsociada" id="descripcionOfertaAsociada"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="bottom-line"></div>
+                                <div class="buttons-box">
+                                    <button class="button add-btn" (click)="createAgencyOffer()">Añadir Excursion</button>
+                                    <button class="button close-btn" (click)="showNothing()">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bottom">
-                    <div class="category">Correo electrónico</div>
-                    <input class="textbox E" type="text" id="Email">
-                    <div class="address">Dirección</div>
-                    <input class="textbox E" type="text" id="Direccion">
-
+                <div class="list">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Hotel</th>
+                            <th>Select</th>
+                        </tr>
+                        <tr *ngFor="let item of offers | slice:0:30">
+                            <td>{{item.id}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.hotelDto.name}}</td>
+                            <td><img src="../../assets/edit-svgrepo-com.svg" alt="" (click)="asociaOferta(item.id, item.description)"></td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
-            <div class="bottom-line"></div>
-            <div class="buttons-box">
-                <button class="button add-btn">Añadir Alojamiento</button>
-                <button class="button close-btn" (click)="showNothing()">Cerrar</button>
             </div>
         </div>
     </div>
@@ -253,4 +285,3 @@
             </div>
         </div>
     </div>
-</div>

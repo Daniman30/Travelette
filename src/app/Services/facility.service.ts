@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IApiCreateFacility, IApiListFacility } from './Models/listAgency.interface';
+import { IApiCreateFacility, IApiListFacility, IApiListFacilityResponse } from './Models/listAgency.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +21,7 @@ export class FacilityService {
     httpClient = inject(HttpClient)
     
     listFacility() {
-        return this.httpClient.get<IApiListFacility[]>('http://localhost:5094/api/Facility/list')
+        return this.httpClient.get<IApiListFacilityResponse>('http://localhost:5094/api/Facility/list')
     }
 
     updateFacility(datos: IApiCreateFacility) {

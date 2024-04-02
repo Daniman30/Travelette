@@ -20,7 +20,7 @@ export class HomeOfertaComponent implements OnInit {
     products: any[] = []
 
     ngOnInit(): void {
-        this.hotelService.listHotels().subscribe((data) => (this.products = data))
+        this.hotelService.listHotels().subscribe((data) => (this.products = data.items))
     }
 
     ViewHotel(id: number, name: string, category: string, address: string, lodgingOffers: any) {

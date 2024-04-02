@@ -29,7 +29,7 @@ export class HotelStaffComponent implements OnInit {
     }
 
     listHotelOffers() {
-        this.hotelOffersService.listHotelOffers().subscribe((data) => (this.offers = data))
+        this.hotelOffersService.listHotelOffers().subscribe((data) => (this.offers = data.items))
     }
 
     createHotelOffers(idHotel: number) {
@@ -44,7 +44,7 @@ export class HotelStaffComponent implements OnInit {
     }
 
     listHotel() {
-        this.hotelService.listHotels().subscribe((data) => (this.hotels = data))
+        this.hotelService.listHotels().subscribe((data) => (this.hotels = data.items))
     }
 
     DeleteHotelOffer(id: number) {

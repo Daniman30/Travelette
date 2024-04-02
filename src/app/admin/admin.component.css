@@ -470,3 +470,13 @@ img {
     flex-direction: row;
     gap: 20px;
 }
+
+.textbox {
+    display: flex;
+    width: 90%;
+    height: 3rem;
+    background-color: #FEC1FF;
+    border-color: #000;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+}

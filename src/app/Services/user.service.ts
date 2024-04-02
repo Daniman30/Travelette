@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { IApiListUser, IApiLogin, IApiRegister } from './Models/listAgency.interface';
+import { IApiListUser, IApiListUserResponse, IApiLogin, IApiRegister } from './Models/listAgency.interface';
 import { tap } from 'rxjs';
 
 @Injectable({
@@ -32,6 +32,6 @@ export class UserService {
     }
 
     listUsers() {
-        return this.http.get<IApiListUser[]>('http://localhost:5094/api/identity/list')
+        return this.http.get<IApiListUserResponse>('http://localhost:5094/api/identity/list')
     }
 }

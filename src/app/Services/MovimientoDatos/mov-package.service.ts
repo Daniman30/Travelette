@@ -8,6 +8,8 @@ export class MovPackageService {
 
     constructor() { }
 
+    idPackage: number
+
     MovPackage: IApiCreatePackage = {
         description: '',
         price: 0,

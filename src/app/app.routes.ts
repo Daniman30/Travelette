@@ -14,6 +14,7 @@ import { ExcursionBookingComponent } from './excursion/excursion-booking/excursi
 import { PackageComponent } from './package/package.component';
 import { PackageBookingComponent } from './package/package-booking/package-booking.component';
 import { UpdatesComponent } from './updates/updates.component';
+import { FinalBookingComponent } from './final-booking/final-booking.component';
 
 
 export const routes: Routes = [
@@ -31,7 +32,8 @@ export const routes: Routes = [
     { path: 'package', component: PackageComponent },
     { path: 'excursion/booking', component: ExcursionBookingComponent },
     { path: 'updates', component: UpdatesComponent },
-    { path: 'package/booking', component: PackageBookingComponent }
+    { path: 'package/booking', component: PackageBookingComponent },
+    { path: 'booking' , component: FinalBookingComponent }
 
 ];
 

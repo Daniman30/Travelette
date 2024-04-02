@@ -20,6 +20,6 @@ export class HomePaqueteComponent implements OnInit {
     products: any[] = []
 
     listPackages() {
-        this.packageService.listPackages().subscribe((data) => (this.products = data))
+        this.packageService.listPackages().subscribe((data) => (this.products = data.items))
     }
 }

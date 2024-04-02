@@ -122,7 +122,7 @@ export class UpdatesComponent implements OnInit {
             arrivalPlace: (document.getElementById('arrivalPlaceExc') as HTMLInputElement).value, 
             departurePlace: (document.getElementById('departurePlaceExc') as HTMLInputElement).value, 
             guia: (document.getElementById('GuiaExc') as HTMLInputElement).value, 
-            agencyID: 1, 
+            agencyID: 2, 
         }
 
         this.excursionService.updateExcursion(post).subscribe({
@@ -153,8 +153,8 @@ export class UpdatesComponent implements OnInit {
             duration: parseInt((document.getElementById('durationPackage') as HTMLInputElement).value),
             startDate: new Date((document.getElementById('startDatePackage') as HTMLInputElement).value),
             endDate: new Date((document.getElementById('endDatePackage') as HTMLInputElement).value),
-            agencyID: this.agencyIDPackage,
-            facilityDtos: []
+            agencyID: this.agencyIDPackage | 2,
+            facilityDtos: [{facilityId: 0}]
         }
 
         this.packageService.updatePackage(post).subscribe({

@@ -19,7 +19,7 @@ export class ExcursionBodyComponent {
     products: any[] = []
 
     ngOnInit(): void {
-        this.excursionService.listExcursion().subscribe((data) => (this.products = data))
+        this.excursionService.listExcursion().subscribe((data) => (this.products = data.items))
     }
 
     ViewExcursion(id:number, name:string, capacity:number, price:number, departurePlace:string, arrivalPlace:string, departureDate:Date, arrivalDate:Date, guia:string, agencyID:number) {

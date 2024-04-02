@@ -12,6 +12,7 @@ export class IdService {
     currentId = this.idSource.asObservable();
 
     idUser = ""
+    nacionality = 0
 
     constructor() { }
 
