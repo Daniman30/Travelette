@@ -9,6 +9,7 @@ export class MovPackageService {
     constructor() { }
 
     idPackage: number
+    type : string
 
     MovPackage: IApiCreatePackage = {
         description: '',
@@ -18,6 +19,7 @@ export class MovPackageService {
         startDate: new Date(),
         endDate: new Date(),
         agencyID: 0,
-        facilityDtos: []
+        facilitiesId: [],
+        excursionsId: []
     }
 }

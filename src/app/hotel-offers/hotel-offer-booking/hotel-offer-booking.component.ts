@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MovHotelService } from '../../Services/MovimientoDatos/mov-hotel.service';
 import { HotelOffersService } from '../../Services/hotel-offers.service';
 import { LodgingOffer } from '../../Services/Models/listAgency.interface';
+import { MovPackageService } from '../../Services/MovimientoDatos/mov-package.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-hotel-offer-booking',
@@ -12,7 +14,9 @@ import { LodgingOffer } from '../../Services/Models/listAgency.interface';
     styleUrl: './hotel-offer-booking.component.css'
 })
 export class HotelOfferBookingComponent implements OnInit {
-    constructor(private movHotelService: MovHotelService) {}
+    constructor(private movHotelService: MovHotelService,
+        private movPackageService: MovPackageService,
+        private router: Router) {}
 
     ngOnInit(): void {
         
@@ -24,4 +28,9 @@ export class HotelOfferBookingComponent implements OnInit {
     hotelLodgingOffers = this.movHotelService.MovHotel.lodgingOffers
 
     products: LodgingOffer[] = this.hotelLodgingOffers
+
+    BookOffer() {
+        this.movPackageService.type = 'bookOffer'
+        this.router.navigate(['../../booking'])
+    }
 }

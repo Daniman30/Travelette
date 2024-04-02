@@ -155,7 +155,21 @@ export interface IApiCreatePackage {
     startDate: Date
     endDate: Date
     agencyID: number
-    facilityDtos: { facilityId: number }[]
+    facilitiesId: { facilityId: number }[]
+    excursionsId: { excursionId: number }[]
+}
+
+export interface IApiUpdatePackage {
+    id: number
+    description: string
+    price: number
+    capacity: number
+    duration: number
+    startDate: Date
+    endDate: Date
+    agencyID: number
+    facilitiesId: { facilityId: number }[]
+    excursionsId: { excursionId: number }[]
 }
 
 export interface IApiListPackage {
@@ -288,6 +302,15 @@ export interface Hotel {
     address: string;
 }
 
+export interface ListHotel {
+    items: Hotel[]
+    pageNumber: number
+    totalPages: number
+    totalCount: number
+    hasPreviousPage: boolean
+    hasNextPage: boolean
+}
+
 export interface IApiBook {
     agencyOfferId: number
     arrivalDate: Date
@@ -320,7 +343,7 @@ export interface IApiBookPackageAdmin{
     packageId: number
     numberOfPeople: number
     airlineCompany: string
-    userNme: string
+    userName: string
     nacionality: number
 }
 
@@ -332,6 +355,20 @@ export interface IApiBookExcursion {
 export interface IApiBookExcursionAdmin {
     excursionId: number
     numberOfCompanions: number
+    userName: string
+    nacionality: number
+}
+
+export interface IApiBookOffer {
+    agencyOfferId: number
+    arrivalDate: Date
+    departureDate: Date
+}
+
+export interface IApiBookOfferAdmin {
+    agencyOfferId: number
+    arrivalDate: Date
+    departureDate: Date
     userName: string
     nacionality: number
 }

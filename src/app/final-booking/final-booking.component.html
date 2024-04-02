@@ -5,7 +5,7 @@
     crossorigin="anonymous"
 />
 
-<div class="main">
+<div class="main" *ngIf="currentdata === 'bookPackage'">
     <div class="forms">
         <div class="bookingPackage">
             <h1 class="title">Booking Package</h1>
@@ -24,6 +24,156 @@
                 </div>
                 <div class="secondline">
                     <button class="button1" (click)="BookPackage()">Pay</button>
+                    <button class="button2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" *ngIf="currentdata === 'bookPackageAdmin'">
+    <div class="forms">
+        <div class="bookingPackage">
+            <h1 class="title">Booking Package Admin</h1>
+            <div class="container">
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>Number of People</p>
+                        <input type="number" id="numberOfPeoplePackage" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Airline Company</p>
+                        <select name="Airlines" id="Airlines">
+                            <option value="Cubana">Cubana</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>UserName</p>
+                        <input type="text" id="UserNamePackage" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Nacionality</p>
+                        <select name="NacionalityPackages" id="NacionalityPackages">
+                            <option value="0">Cubana</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="secondline">
+                    <button class="button1" (click)="BookPackageAdmin()">Pay</button>
+                    <button class="button2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" *ngIf="currentdata === 'bookExcursion'">
+    <div class="forms">
+        <div class="bookingPackage">
+            <h1 class="title">Booking Excursion</h1>
+            <div class="container">
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>Number of Companions</p>
+                        <input type="text" id="numberOfPeopleExcursion" />
+                    </div>
+                </div>
+                <div class="secondline">
+                    <button class="button1" (click)="BookExcursion()">Pay</button>
+                    <button class="button2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" *ngIf="currentdata === 'bookExcursionAdmin'">
+    <div class="forms">
+        <div class="bookingPackage">
+            <h1 class="title">Booking Excursion Admin</h1>
+            <div class="container">
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>Number of Companions</p>
+                        <input type="number" id="numberOfPeopleExcursionAdmin" />
+                    </div>
+                </div>
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>UserName</p>
+                        <input type="text" id="UserNameExcursion" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Nacionality</p>
+                        <select name="NacionalityPackages" id="NacionalityExcursion">
+                            <option value="0">Cubana</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="secondline">
+                    <button class="button1" (click)="BookExcursionAdmin()">Pay</button>
+                    <button class="button2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" *ngIf="currentdata === 'bookOffer'">
+    <div class="forms">
+        <div class="bookingPackage">
+            <h1 class="title">Booking Offer</h1>
+            <div class="container">
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>Arrival Date</p>
+                        <input type="datetime-local" id="arrivalDate" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Departure Date</p>
+                        <input type="datetime-local" id="departureDate" />
+                    </div>
+                </div>
+                <div class="secondline">
+                    <button class="button1" (click)="BookOffer()">Pay</button>
+                    <button class="button2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" *ngIf="currentdata === 'bookOfferAdmin'">
+    <div class="forms">
+        <div class="bookingPackage">
+            <h1 class="title">Booking Offer Admin</h1>
+            <div class="container">
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>Arrival Date</p>
+                        <input type="datetime-local" id="arrivalDateAdmin" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Departure Date</p>
+                        <input type="datetime-local" id="departureDateAdmin" />
+                    </div>
+                </div>
+                <div class="firstline">
+                    <div class="leftFirstline">
+                        <p>UserName</p>
+                        <input type="text" id="UserNameOfferAdmin" />
+                    </div>
+                    <div class="rightFirstline">
+                        <p>Nacionality</p>
+                        <select name="NacionalityOfferAdmin" id="NacionalityOfferAdmin">
+                            <option value="0">Cubana</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="secondline">
+                    <button class="button1" (click)="BookOfferAdmin()">Pay</button>
                     <button class="button2">Close</button>
                 </div>
             </div>

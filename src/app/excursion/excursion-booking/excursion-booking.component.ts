@@ -1,21 +1,27 @@
+import { MovPackageService } from './../../Services/MovimientoDatos/mov-package.service';
+import { BookingsService } from './../../Services/MovimientoDatos/bookings.service';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MovExcursionService } from '../../Services/MovimientoDatos/mov-excursion.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-excursion-booking',
     standalone: true,
-    imports: [RouterModule],
+    imports: [],
     templateUrl: './excursion-booking.component.html',
     styleUrl: './excursion-booking.component.css'
 })
 export class ExcursionBookingComponent implements OnInit {
 
-    constructor(public movExcursionService: MovExcursionService) {}
+    constructor(public movExcursionService: MovExcursionService,
+        private movPackageService: MovPackageService,
+        private bookingsService: BookingsService,
+        private router: Router) {}
     ngOnInit(): void {
         
     }
-
+    excursionId = this.movExcursionService.MovExcursion.id
     excursionName = this.movExcursionService.MovExcursion.name
     excursionCapacity = this.movExcursionService.MovExcursion.capacity
     excursionPrice = this.movExcursionService.MovExcursion.price
@@ -25,5 +31,10 @@ export class ExcursionBookingComponent implements OnInit {
     excursionArrivalDate = new Date(this.movExcursionService.MovExcursion.arrivalDate)
     excursionGuia = this.movExcursionService.MovExcursion.guia
 
-
+    BookingExcursion() {
+        // this.bookingsService.typeBooking = 'bookExcursion'
+        this.movPackageService.type = 'bookExcursion'
+        this.router.navigate(['../../booking'])
+    }
 }
+

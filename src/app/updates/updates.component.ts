@@ -1,3 +1,4 @@
+import { IdService } from './../Services/MovimientoDatos/id.service';
 import { PackageService } from './../Services/package.service';
 import { Component, OnInit } from '@angular/core';
 import { AgencyService } from '../Services/agency.service';
@@ -9,6 +10,7 @@ import { FacilityService } from '../Services/facility.service';
 import { HotelService } from '../Services/hotel.service';
 import { ExcursionService } from '../Services/excursion.service';
 import { HotelOffersService } from '../Services/hotel-offers.service';
+import { IApiCreatePackage, IApiListAgency, IApiUpdatePackage } from '../Services/Models/listAgency.interface';
 
 @Component({
     selector: 'app-updates',
@@ -28,9 +30,12 @@ export class UpdatesComponent implements OnInit {
         private hotelService: HotelService,
         private excursionService: ExcursionService,
         private hotelOffersService: HotelOffersService,
-        private packageService: PackageService) {}
+        private packageService: PackageService,
+        private idService: IdService) {}
 
     ngOnInit(): void {
+        this.listAgency()
+        this.asignarId()
     }
 
     id: number = this.updateService.id 
@@ -71,7 +76,8 @@ export class UpdatesComponent implements OnInit {
     startDatePackage: Date = this.updateService.startDatePackage
     endDatePackage: Date = this.updateService.endDatePackage
     agencyIDPackage: number = this.updateService.agencyIDPackage
-    facilityDtosPackage: any = this.updateService.facilityDtosPackage
+    facilitiesIdPackage: any = this.updateService.facilitiesIdPackage
+    excursionsIdPackage: any = this.updateService.excursionsIdPackage
 
     updateAgency() {
         let post = {
@@ -111,6 +117,29 @@ export class UpdatesComponent implements OnInit {
         })
     }
 
+    agencies: IApiListAgency[] = []
+    listAgency() {
+        this.agencyService.listAgencies().subscribe((data2) => {
+            this.agencies = data2.items
+        })
+    }
+
+    UserName: string = ''
+    asignarId() {
+        this.idService.currentId.subscribe(id => {
+            this.UserName = id;
+        });
+    }
+
+    getAgencyId(agencies: IApiListAgency[], agencyName: string): number | null {
+        for (let agency of agencies) {
+            if (agency.name === agencyName) {
+                return agency.id;
+            }
+        }
+        return null; // Devuelve null si no se encuentra ninguna agencia con ese nombre
+    }
+
     updateExcursion() {
         let post = {
             id: this.idExcursion,
@@ -122,7 +151,7 @@ export class UpdatesComponent implements OnInit {
             arrivalPlace: (document.getElementById('arrivalPlaceExc') as HTMLInputElement).value, 
             departurePlace: (document.getElementById('departurePlaceExc') as HTMLInputElement).value, 
             guia: (document.getElementById('GuiaExc') as HTMLInputElement).value, 
-            agencyID: 2, 
+            agencyID: this.agencyIDExcursion,
         }
 
         this.excursionService.updateExcursion(post).subscribe({
@@ -145,7 +174,7 @@ export class UpdatesComponent implements OnInit {
     }
 
     updatePackage() {
-        let post = {
+        let post: IApiUpdatePackage = {
             id: this.idPackage,
             description: (document.getElementById('descriptionPackage') as HTMLTextAreaElement).value,
             price: parseInt((document.getElementById('pricePackage') as HTMLInputElement).value),
@@ -153,8 +182,9 @@ export class UpdatesComponent implements OnInit {
             duration: parseInt((document.getElementById('durationPackage') as HTMLInputElement).value),
             startDate: new Date((document.getElementById('startDatePackage') as HTMLInputElement).value),
             endDate: new Date((document.getElementById('endDatePackage') as HTMLInputElement).value),
-            agencyID: this.agencyIDPackage | 2,
-            facilityDtos: [{facilityId: 0}]
+            agencyID: this.agencyIDPackage,
+            facilitiesId: this.facilitiesIdPackage,
+            excursionsId: this.excursionsIdPackage
         }
 
         this.packageService.updatePackage(post).subscribe({

@@ -23,7 +23,7 @@ export class PackageBodyComponent {
         this.packageService.listPackages().subscribe((data) => (this.products = data.items))
     }
 
-    ViewPackage(id:number, name: string, capacity: number, price: number, duration: number, departureDate: Date, arrivalDate: Date, agencyID: number, facilityDtos: any) {
+    ViewPackage(id:number, name: string, capacity: number, price: number, duration: number, departureDate: Date, arrivalDate: Date, agencyID: number, facilitiesId: any) {
         this.movPackageService.idPackage = id
         this.movPackageService.MovPackage.description = name
         this.movPackageService.MovPackage.capacity = capacity
@@ -32,7 +32,7 @@ export class PackageBodyComponent {
         this.movPackageService.MovPackage.startDate = departureDate
         this.movPackageService.MovPackage.endDate = arrivalDate
         this.movPackageService.MovPackage.agencyID = agencyID
-        this.movPackageService.MovPackage.facilityDtos = facilityDtos
+        this.movPackageService.MovPackage.facilitiesId = facilitiesId
         this.router.navigate(['../package/booking'])
     }
 }

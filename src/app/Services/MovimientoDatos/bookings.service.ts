@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class BookingsService {
 
-    packageId: number
+    constructor() {}
+    packageId: string
+    bookingtype = ''
     
 }

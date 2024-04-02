@@ -6,27 +6,12 @@
         <div class="title-text">
             <div class="title-name">
                 {{hotelName}}                
-                <div class="stars">
-                    <!-- <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" />
-                    <img src="../../assets/Star.svg" /> -->
-                </div>
             </div>
             <div class="title-details">
                 <div class="location">
                     <img src="../../assets/Location.svg" />
                     <div class="location-text">{{hotelAddress}}</div>
                 </div>
-            </div>
-        </div>
-        <div class="price_and_booking">
-            <p>
-                <!-- <span class="price_number">$300</span><span class="night">/night</span> -->
-            </p>
-            <div class="booking-btns">
-                <!-- <button class="booking-btn">Buy Now</button> -->
             </div>
         </div>
     </div>
@@ -52,32 +37,6 @@
                     {{hotelCategory}}
                 </div>
             </div>
-            <!-- <div class="amenities-box">
-                <div class="amenitie">
-                    <div class="amenitie-interior">
-                        <img class="stardust" src="../../assets/Stars.svg" />
-                        <div class="amenitie-text">Nearby Parking</div>
-                    </div>
-                </div>
-                <div class="amenitie">
-                    <div class="amenitie-interior">
-                        <img class="stardust" src="../../assets/Stars.svg" />
-                        <div class="amenitie-text">Nearby Nightclub</div>
-                    </div>
-                </div>
-                <div class="amenitie">
-                    <div class="amenitie-interior">
-                        <img class="stardust" src="../../assets/Stars.svg" />
-                        <div class="amenitie-text">Nearby Theater</div>
-                    </div>
-                </div>
-                <div class="amenitie">
-                    <div class="amenitie-interior">
-                        <img class="stardust" src="../../assets/Stars.svg" />
-                        <div class="amenitie-text">Swimming Pool</div>
-                    </div>
-                </div>
-            </div> -->
             <hr class="">
             <div class="availablerooms-box">
                 <div class="availablerooms-title">
@@ -91,7 +50,7 @@
                         </div>
                         <div class="room-booking">
                             <p> <span class="room-price">${{item.price}}</span> <span class="room-night">/night</span> </p>
-                            <button class="room-book-btn">Buy Now</button>
+                            <button class="room-book-btn" (click)="BookOffer()">Buy Now</button>
                         </div>
                     </div>
                     <hr class="line2">

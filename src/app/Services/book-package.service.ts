@@ -19,8 +19,9 @@ export class BookPackageService {
 
     bookPackageAdmin(data: IApiBookPackageAdmin) {
         const token = localStorage.getItem('access_token');
-        console.log(token);
-        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+        const tokenJson = JSON.parse(token)
+        const finaltoken = tokenJson.token;
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${finaltoken}`);
         return this.http.post('http://localhost:5094/api/BookPackage/bookByAdmin', data, { headers })
     }
 }

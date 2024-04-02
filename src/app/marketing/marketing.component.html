@@ -40,7 +40,7 @@
                 <td>{{item.startDate}}</td>
                 <td>{{item.endDate}}</td>
                 <td>{{item.agencyID}}</td>
-                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updatePackage(item.id, item.description, item.price, item.capacity, item.duration, item.startDate, item.endDate, item.agencyID, item.dto)"></td>
+                <td><img src="../../assets/edit-svgrepo-com.svg" alt="update-icon" (click)="updatePackage(item.id, item.description, item.price, item.capacity, item.duration, item.startDate, item.endDate, item.agencyID, item.facilities, item.excursions)"></td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon" (click)="deletePackages(item.id)"></td>
             </tr>
         </table>
@@ -86,13 +86,13 @@
                 <th>Direccion</th>
                 <th>Borrar</th>
             </tr>
-            <!-- <tr *ngFor="let item of products | slice:0:10">
+            <tr *ngFor="let item of products | slice:0:10">
                 <td>{{item.name}}</td>
                 <td>{{item.id}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.address}}</td>
                 <td><img src="../../assets/delete-icon.svg" alt="delete-icon"></td>
-            </tr> -->
+            </tr>
         </table>
     </div>
 

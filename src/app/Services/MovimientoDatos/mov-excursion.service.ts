@@ -8,6 +8,8 @@ export class MovExcursionService {
 
     constructor() { }
 
+    type: string
+
     MovExcursion: IApiListExcursion = {
         id: 0,
         name: '',

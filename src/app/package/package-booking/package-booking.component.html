@@ -17,25 +17,23 @@
         <div class="pricebox">
             <div class="price">${{packagePrice}}</div>
             <div class="btns-box">
-                <button class="buy-btn" routerLink="../../booking">Comprar</button>
+                <button class="buy-btn" (click)="BookPackage()">Comprar</button>
             </div>
         </div>
     </div>
     <div class="main-header">
         <div class="date">
             <p>Departure</p>
-            <p>{{(packageStartDate).toLocaleDateString()}}</p>
-            <!-- <p>{{excursionDepartureDate.toLocaleDateString()}}</p> -->
-            <p>{{packageStartDate}}</p>
+            <p>{{(packageStartDate)}}</p>
+            <!-- <p>{{excursionDepartureDate}}</p> -->
         </div>
         <div class="date">
             <p>Arrival</p>
-            <p>{{packageEndDate.toLocaleDateString()}}</p>
             <p>{{packageEndDate}}</p>
         </div>
     </div>
     <img class="mainimg" src="../../../assets/img/avion.jpeg" />
-    <div class="description-box" *ngFor="let item of packageFacilityDtos | slice:0:4">
+    <div class="description-box" *ngFor="let item of packageFacilitiesId | slice:0:4">
         <div class="main">
             <div class="main-header">
                 <div class="date">Return Wed, Dec 8</div>

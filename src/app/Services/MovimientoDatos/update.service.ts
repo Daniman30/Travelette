@@ -45,5 +45,6 @@ export class UpdateService {
     startDatePackage!: Date
     endDatePackage!: Date
     agencyIDPackage!: number
-    facilityDtosPackage!: { facilityId: number }
+    facilitiesIdPackage!: { facilityId: number }
+    excursionsIdPackage!: { excursionId: number }
 }

@@ -1,8 +1,8 @@
 import { AgencyOfferService } from './../Services/agency-offer.service';
-import { IApiListAgency, LodgingOffer } from './../Services/Models/listAgency.interface';
+import { IApiCreatePackage, IApiListAgency, LodgingOffer } from './../Services/Models/listAgency.interface';
 import { FacilityService } from '../Services/facility.service';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ExcursionService } from '../Services/excursion.service';
 import { PackageService } from '../Services/package.service';
 import { ExtendedExcursionService } from '../Services/extended-excursion.service';
@@ -19,7 +19,7 @@ import { IdService } from '../Services/MovimientoDatos/id.service';
     templateUrl: './marketing.component.html',
     styleUrl: './marketing.component.css'
 })
-export class MarketingComponent {
+export class MarketingComponent implements OnInit {
 
     constructor(private hotelOffersService: HotelOffersService,
         private facilityService: FacilityService,
@@ -31,6 +31,12 @@ export class MarketingComponent {
         private agencyService: AgencyService,
         private idService: IdService,
         private router: Router) { }
+
+    ngOnInit(): void {
+        this.listAgency()
+        this.listHotelOffers()
+        this.asignarId()
+    }
 
     products: any[] = []
     show = ''
@@ -45,7 +51,6 @@ export class MarketingComponent {
 
     showAddBooking() {
         this.show = 'AddBooking'
-        this.listHotelOffers()
     }
 
     showAddFacilities() {
@@ -58,7 +63,11 @@ export class MarketingComponent {
 
 
     listPackages() {
-        this.packageService.listPackages().subscribe((data) => (this.products = data.items))
+        this.packageService.listPackages().subscribe((data) => {
+            this.products = data.items
+            console.log(data);
+            console.log(data.items);
+        })
         this.show = 'package'
     }
 
@@ -126,7 +135,9 @@ export class MarketingComponent {
 
     agencies: IApiListAgency[] = []
     listAgency() {
-        this.agencyService.listAgencies().subscribe((data2) => (this.agencies = data2.items))
+        this.agencyService.listAgencies().subscribe((data2) => {
+            this.agencies = data2.items
+        })
     }
 
     UserName: string = ''
@@ -135,10 +146,9 @@ export class MarketingComponent {
             this.UserName = id;
         });
     }
-    
+
 
     createExcursion() { // Also Extended Excursion
-        this.listAgency()
         let post = {
             name: (document.getElementById('Nombre') as HTMLInputElement).value,
             capacity: parseInt((document.getElementById('Capacity') as HTMLInputElement).value),
@@ -148,7 +158,7 @@ export class MarketingComponent {
             arrivalPlace: (document.getElementById('arrivalPlace') as HTMLInputElement).value,
             departurePlace: (document.getElementById('departurePlace') as HTMLInputElement).value,
             guia: (document.getElementById('Guia') as HTMLInputElement).value,
-            agencyID: this.getAgencyId(this.agencies, this.UserName) | 2,
+            agencyID: this.getAgencyId(this.agencies, this.UserName) | 1,
             numberOfDays: 0
         }
 
@@ -168,32 +178,33 @@ export class MarketingComponent {
     }
 
     createPackage() {
-        let post = {
+        let post: IApiCreatePackage = {
             description: (document.getElementById('Description') as HTMLInputElement).value,
             price: parseInt((document.getElementById('Price') as HTMLInputElement).value),
             capacity: parseInt((document.getElementById('Capacity') as HTMLInputElement).value),
             duration: parseInt((document.getElementById('Duration') as HTMLInputElement).value),
             startDate: new Date((document.getElementById('StartDate') as HTMLInputElement).value),
             endDate: new Date((document.getElementById('EndDate') as HTMLInputElement).value),
-            agencyID: this.getAgencyId(this.agencies, this.UserName) | 2,
-            facilityDtos: [{ facilityId: 0 }]
+            agencyID: this.getAgencyId(this.agencies, this.UserName),
+            facilitiesId: [],
+            excursionsId: []
         }
 
         this.packageService.createPackagePost(post).subscribe({
             next: (response) => { this.showNothing() }
         })
     }
-    
+
     idLodgingOffer = 0
     asociaOferta(id: number, description: string) {
         let nombre = document.getElementById('descripcionOfertaAsociada')
-        if(nombre) {nombre.innerText = description}
+        if (nombre) { nombre.innerText = description }
         this.idLodgingOffer = id
     }
 
     createAgencyOffer() {
         let post = {
-            agencyId: 2,
+            agencyId: this.getAgencyId(this.agencies, this.UserName),
             LodgingOffers: [
                 {
                     offerId: this.idLodgingOffer,
@@ -202,7 +213,7 @@ export class MarketingComponent {
             ]
         }
         this.agencyOfferService.createAgencyOffer(post).subscribe({
-            next: (data) =>  { this.showNothing() }
+            next: (data) => { this.showNothing() }
         })
     }
 
@@ -233,7 +244,7 @@ export class MarketingComponent {
         this.router.navigate(['../updates'])
     }
 
-    updatePackage(id:number, description:string, price:number, capacity:number, duration:number, startDate:Date, endDate:Date, agencyID:number, dto:any) {
+    updatePackage(id: number, description: string, price: number, capacity: number, duration: number, startDate: Date, endDate: Date, agencyID: number, faIdP: any, exIdP: any) {
         this.updateService.idPackage = id
         this.updateService.descriptionPackage = description
         this.updateService.pricePackage = price
@@ -242,7 +253,8 @@ export class MarketingComponent {
         this.updateService.startDatePackage = startDate
         this.updateService.endDatePackage = endDate
         this.updateService.agencyIDPackage = agencyID
-        this.updateService.facilityDtosPackage = dto
+        this.updateService.facilitiesIdPackage = faIdP
+        this.updateService.excursionsIdPackage = exIdP
         this.updateService.typeService = 'AddPackage'
         this.router.navigate(['../updates'])
     }

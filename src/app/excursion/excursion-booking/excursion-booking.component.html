@@ -19,7 +19,7 @@
         <div class="pricebox">
             <div class="price">${{excursionPrice}}</div>
             <div class="btns-box">
-                <button class="buy-btn">Comprar</button>
+                <button class="buy-btn" (click)="BookingExcursion()">Comprar</button>
             </div>
         </div>
     </div>
@@ -29,14 +29,11 @@
             <div class="main-header">
                 <div class="date">
                     <p>Departure</p>
-                    <p>{{(excursionDepartureDate).toLocaleDateString()}}</p>
-                    <!-- <p>{{excursionDepartureDate.toLocaleDateString()}}</p> -->
-                    <p>{{excursionDeparturePlace}}</p>
+                    <p>{{(excursionDepartureDate)}}</p>
                 </div>
                 <div class="date">
                     <p>Arrival</p>
-                    <p>{{excursionArrivalDate.toLocaleDateString()}}</p>
-                    <p>{{excursionArrivalPlace}}</p>
+                    <p>{{excursionArrivalDate}}</p>
                 </div>
             </div>
             <div class="content">
@@ -46,7 +43,7 @@
                 </div>
                 <div class="travel">
                     <div class="departure">
-                        <div class="departure-date">{{excursionDepartureDate.toLocaleTimeString()}}</div>
+                        <!-- <div class="departure-date">{{excursionDepartureDate}}</div> -->
                     </div>
                     <div class="center-icons">
                         <img class="horizontal-lines" src="../../../../assets/line1.svg">
@@ -54,7 +51,7 @@
                         <img class="horizontal-lines" src="../../../../assets/line2.svg">
                     </div>
                     <div class="arrival">
-                        <div class="arrival-date">{{excursionArrivalDate.toLocaleTimeString()}}</div>
+                        <div class="arrival-date">{{excursionArrivalDate}}</div>
                     </div>
                 </div>
             </div>

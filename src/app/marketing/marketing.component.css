@@ -236,10 +236,10 @@ img {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 0.25rem 0.25rem 0rem 0rem;
-    
+
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: row;
 }
@@ -249,4 +249,14 @@ img {
     border: 1.5px solid #000;
     width: 130px;
     height: 28px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
 }

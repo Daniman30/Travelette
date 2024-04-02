@@ -1,4 +1,4 @@
-import { Hotel, LodgingOffer } from './../Services/Models/listAgency.interface';
+import { Hotel, ListHotel, LodgingOffer } from './../Services/Models/listAgency.interface';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
@@ -25,8 +25,8 @@ export class HotelOffersComponent implements OnInit {
     products: Hotel[] = []
     httpClient = inject(HttpClient)
     listHotels() {
-        this.httpClient.get<Hotel[]>('http://localhost:5094/api/Hotel/list').subscribe((data) => {
-            this.products = data
+        this.httpClient.get<ListHotel>('http://localhost:5094/api/Hotel/list').subscribe((data) => {
+            this.products = data.items
         })
     }
 
